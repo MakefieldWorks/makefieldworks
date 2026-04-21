@@ -1,0 +1,185 @@
+/* ─────────────────────────────────────────────────────────────
+   Makefield Works — Design Tokens
+   Source of truth for all four products and the parent site.
+   Mirrors FERSCalc's existing palette so adoption is near-zero-cost.
+   ─────────────────────────────────────────────────────────────
+
+   Usage:
+   - As a plain CSS link in prototypes and the parent site
+   - As a reference when generating Tailwind v4 @theme blocks
+
+   Conventions:
+   - Neutrals: Tailwind slate (50 → 950). The canonical UI neutral.
+   - Brand:    deep-blue scale, mirrors FERSCalc brand-* tokens.
+   - Accents:  emerald (trust), amber (caution), rose (warning/red).
+   - Product:  each product has ONE accent pulled from the scales.
+   - Paper:    warm off-white for the parent-brand site only.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Neutrals — slate ────────────────────────────────────────── */
+  --mw-slate-50:  #f8fafc;
+  --mw-slate-100: #f1f5f9;
+  --mw-slate-200: #e2e8f0;
+  --mw-slate-300: #cbd5e1;
+  --mw-slate-400: #94a3b8;
+  --mw-slate-500: #64748b;
+  --mw-slate-600: #475569;
+  --mw-slate-700: #334155;
+  --mw-slate-800: #1e293b;
+  --mw-slate-900: #0f172a;
+  --mw-slate-950: #020617;
+
+  /* ── Brand blue — shared by all products & parent ────────────── */
+  --mw-brand-50:  #eff6ff;
+  --mw-brand-100: #dbeafe;
+  --mw-brand-200: #bfdbfe;
+  --mw-brand-300: #93c5fd;
+  --mw-brand-400: #60a5fa;
+  --mw-brand-500: #3b82f6;
+  --mw-brand-600: #2563eb;
+  --mw-brand-700: #1d4ed8;
+  --mw-brand-800: #1e40af;
+  --mw-brand-900: #1e3a5f; /* FERSCalc's own darker brand-900 */
+  --mw-brand-950: #172554;
+
+  /* ── Trust / status accents ──────────────────────────────────── */
+  --mw-emerald-400: #34d399;
+  --mw-emerald-500: #10b981;
+  --mw-emerald-600: #059669;
+  --mw-emerald-700: #047857;
+
+  --mw-amber-400: #fbbf24;
+  --mw-amber-500: #f59e0b;
+  --mw-amber-600: #d97706;
+
+  --mw-rose-400: #fb7185;
+  --mw-rose-500: #f43f5e;
+  --mw-rose-600: #e11d48;
+
+  /* ── Parent-brand only: warm off-white paper ─────────────────── */
+  --mw-paper:      #fafaf7;
+  --mw-paper-rule: #e9e6dd;
+
+  /* ── Semantic surface tokens — light mode ────────────────────── */
+  --mw-bg:            #ffffff;
+  --mw-bg-subtle:     var(--mw-slate-50);
+  --mw-surface:       #ffffff;
+  --mw-surface-soft:  var(--mw-slate-50);
+  --mw-rule:          var(--mw-slate-200);
+  --mw-rule-strong:   var(--mw-slate-300);
+  --mw-ink:           var(--mw-slate-950);
+  --mw-ink-2:         var(--mw-slate-700);
+  --mw-ink-3:         var(--mw-slate-500);
+  --mw-ink-4:         var(--mw-slate-400);
+  --mw-brand:         var(--mw-brand-700);
+  --mw-brand-strong:  var(--mw-brand-900);
+  --mw-trust:         var(--mw-emerald-600);
+  --mw-caution:       var(--mw-amber-500);
+  --mw-warning:       var(--mw-rose-500);
+
+  /* ── Product marks — pulled from each product's shipping logo ─ */
+  --mw-product-ferscalc: #32747C; /* FERSCalc's teal wave mark */
+  --mw-product-vpp:      #7FCCC6; /* DIGWAVE aqua spiral */
+  --mw-product-manifest: #D7B642; /* Manifest's warm gold accent */
+  --mw-product-gardener: var(--mw-emerald-700); /* placeholder — no mark yet */
+
+  /* ── Type ────────────────────────────────────────────────────── */
+  --mw-font-sans:  'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mw-font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --mw-font-mono:  'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Type scale — fluid-ish step values (fixed px for predictability) */
+  --mw-text-xs:   12px;  /* captions, labels (uppercase tracked) */
+  --mw-text-sm:   13px;  /* secondary UI */
+  --mw-text-base: 15px;  /* body */
+  --mw-text-md:   17px;  /* large body, lead-ins */
+  --mw-text-lg:   20px;  /* card titles */
+  --mw-text-xl:   24px;  /* section labels */
+  --mw-text-2xl:  32px;  /* subheads */
+  --mw-text-3xl:  40px;  /* page titles */
+  --mw-text-4xl:  52px;  /* hero */
+  --mw-text-5xl:  64px;  /* hero display */
+
+  /* Line heights */
+  --mw-leading-tight: 1.08;   /* display */
+  --mw-leading-snug:  1.28;
+  --mw-leading-body:  1.6;    /* long-form */
+  --mw-leading-ui:    1.5;    /* ui body */
+
+  /* Letter spacing */
+  --mw-tracking-tight:  -0.02em;  /* display */
+  --mw-tracking-snug:   -0.01em;  /* large headings */
+  --mw-tracking-normal:  0;
+  --mw-tracking-wide:    0.04em;
+  --mw-tracking-kicker:  0.18em;  /* uppercase kickers */
+  --mw-tracking-mono:    0.02em;
+
+  /* Weights */
+  --mw-weight-regular: 400;
+  --mw-weight-medium:  500;
+  --mw-weight-semi:    600;
+  --mw-weight-bold:    700;
+
+  /* ── Spacing scale (4px base) ────────────────────────────────── */
+  --mw-space-1:  4px;
+  --mw-space-2:  8px;
+  --mw-space-3:  12px;
+  --mw-space-4:  16px;
+  --mw-space-5:  20px;
+  --mw-space-6:  24px;
+  --mw-space-8:  32px;
+  --mw-space-10: 40px;
+  --mw-space-12: 48px;
+  --mw-space-16: 64px;
+  --mw-space-20: 80px;
+  --mw-space-24: 96px;
+
+  /* ── Radii ───────────────────────────────────────────────────── */
+  --mw-radius-sm: 4px;   /* chips, small buttons */
+  --mw-radius-md: 8px;   /* inputs, standard buttons */
+  --mw-radius-lg: 12px;  /* cards */
+  --mw-radius-xl: 20px;  /* large marketing cards */
+  --mw-radius-2xl: 28px; /* hero surfaces (FERSCalc's rounded-[1.75rem]) */
+  --mw-radius-pill: 999px;
+
+  /* ── Shadows — restrained, used sparingly ────────────────────── */
+  --mw-shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --mw-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --mw-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --mw-shadow-lg: 0 20px 40px -20px rgba(15, 23, 42, 0.25);
+
+  /* ── Z-index scale ───────────────────────────────────────────── */
+  --mw-z-base: 0;
+  --mw-z-raised: 10;
+  --mw-z-overlay: 100;
+  --mw-z-sticky: 200;
+  --mw-z-modal: 1000;
+
+  /* ── Focus ring ──────────────────────────────────────────────── */
+  --mw-focus-ring: 0 0 0 2px var(--mw-brand-500), 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* ── Dark mode — opt-in only ─────────────────────────────────────
+   Matches FERSCalc's .dark-class strategy. We do NOT use
+   prefers-color-scheme because --mw-paper (warm off-white) is
+   a fixed editorial surface for the parent brand; flipping ink
+   without flipping paper would produce unreadable pages.
+   If a product wants dark mode, toggle `html.dark`.
+   ───────────────────────────────────────────────────────────── */
+html.dark {
+  --mw-paper:        var(--mw-slate-950);
+  --mw-paper-rule:   var(--mw-slate-800);
+  --mw-bg:           var(--mw-slate-950);
+  --mw-bg-subtle:    var(--mw-slate-900);
+  --mw-surface:      var(--mw-slate-900);
+  --mw-surface-soft: var(--mw-slate-800);
+  --mw-rule:         var(--mw-slate-800);
+  --mw-rule-strong:  var(--mw-slate-700);
+  --mw-ink:          var(--mw-slate-50);
+  --mw-ink-2:        var(--mw-slate-300);
+  --mw-ink-3:        var(--mw-slate-400);
+  --mw-ink-4:        var(--mw-slate-500);
+  --mw-brand:        var(--mw-brand-400);
+  --mw-brand-strong: var(--mw-brand-300);
+}

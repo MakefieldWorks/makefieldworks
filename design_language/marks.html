@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Makefield Works — Brand marks</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html, body { margin: 0; background: var(--mw-paper); font-family: var(--mw-font-sans); color: var(--mw-ink); }
+  .page { max-width: 1120px; margin: 0 auto; padding: 64px 56px 80px; }
+  .kicker { font-family: var(--mw-font-mono); font-size: 11px; letter-spacing: var(--mw-tracking-kicker); text-transform: uppercase; color: var(--mw-ink-3); }
+  .rule { height: 1px; background: var(--mw-paper-rule); margin: 40px 0; }
+  .mono { font-family: var(--mw-font-mono); font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+  .mark-card {
+    background: var(--mw-surface);
+    border: 1px solid var(--mw-paper-rule);
+    border-radius: var(--mw-radius-xl);
+    overflow: hidden;
+  }
+  .mark-stage {
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    border-bottom: 1px solid var(--mw-paper-rule);
+  }
+  .mark-stage img { max-width: 50%; max-height: 55%; display: block; }
+  .mark-stage.light { background: white; }
+  .mark-stage.dark { background: var(--mw-slate-900); }
+  .mark-stage.product-bg-ferscalc { background: #f0f6f6; }
+  .mark-stage.product-bg-vpp { background: #eaf6f5; }
+  .mark-stage.product-bg-manifest { background: #faf7ee; }
+  .mark-stage.product-bg-gardener { background: #edf6ef; }
+  .mark-stage.placeholder {
+    background: var(--mw-slate-50);
+    font-family: var(--mw-font-mono); font-size: 12px; color: var(--mw-ink-3);
+    letter-spacing: 0.08em; text-transform: uppercase;
+    flex-direction: column; gap: 12px;
+  }
+  .mark-stage.placeholder .icon {
+    width: 56px; height: 56px; border: 2px dashed var(--mw-slate-300); border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--mw-ink-4); font-size: 20px;
+  }
+
+  .mark-meta { padding: 22px 26px; }
+  .mark-meta h3 { font-family: var(--mw-font-serif); font-size: 24px; line-height: 1.15; letter-spacing: -0.015em; font-weight: 500; margin: 0; }
+  .mark-meta .sub { font-size: 13px; color: var(--mw-ink-2); margin-top: 6px; line-height: 1.55; }
+  .mark-foot { display: flex; justify-content: space-between; font-family: var(--mw-font-mono); font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; padding: 12px 26px; border-top: 1px solid var(--mw-paper-rule); background: var(--mw-bg-subtle); }
+  .chip { display: inline-flex; align-items: center; gap: 6px; }
+  .chip-sw { width: 10px; height: 10px; border-radius: 2px; }
+
+  /* Parent mark construction */
+  .parent-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;
+    background: var(--mw-surface);
+    border: 1px solid var(--mw-paper-rule);
+    border-radius: var(--mw-radius-xl);
+    padding: 32px;
+  }
+  .parent-cell { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 24px 16px; border: 1px solid var(--mw-paper-rule); border-radius: var(--mw-radius-md); background: white; }
+  .parent-cell .label { font-family: var(--mw-font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--mw-ink-3); text-transform: uppercase; }
+
+  /* Wordmark specimens */
+  .wordmark { display: flex; align-items: center; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--mw-paper-rule); }
+  .wordmark:last-child { border-bottom: none; }
+  .wordmark .img-wrap { flex: 0 0 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+  .wordmark .img-wrap img { max-width: 100%; max-height: 100%; }
+  .wordmark .wm-name { font-family: var(--mw-font-serif); font-size: 22px; font-weight: 500; letter-spacing: -0.01em; }
+  .wordmark .wm-endorsement { margin-left: auto; font-family: var(--mw-font-sans); font-size: 13px; color: var(--mw-ink-3); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 13px; height: 13px;">
+      <rect x="2" y="2" width="20" height="20" rx="2" stroke="var(--mw-ink)" stroke-width="1.5"/>
+      <rect x="7" y="7" width="10" height="10" rx="1" fill="var(--mw-brand-900)"/>
+    </svg>
+    <span class="kicker">Makefield Works · foundation</span>
+  </div>
+  <div style="font-family: var(--mw-font-serif); font-size: 56px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 500; margin-top: 10px;">
+    Brand marks.
+  </div>
+  <div style="font-size: 17px; color: var(--mw-ink-2); max-width: 640px; margin-top: 14px; line-height: 1.6;">
+    One parent mark and the shipping logo of each child product. Each product keeps its own mark; Makefield is the endorsement below.
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Parent construction -->
+  <div class="kicker" style="margin-bottom: 12px;">01 · The parent mark</div>
+  <div style="font-size: 14px; color: var(--mw-ink-2); max-width: 640px; line-height: 1.6; margin-bottom: 24px;">
+    A square inside a square — the workshop frame holding one piece of work. Ink outline on white, deep-navy fill on the inner plate. Renders at any size, reads at 12px. Never combined with a product mark.
+  </div>
+
+  <div class="parent-grid">
+    <div class="parent-cell">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 160px; height: 160px;">
+        <rect x="2" y="2" width="20" height="20" rx="2" stroke="var(--mw-ink)" stroke-width="1.5"/>
+        <rect x="7" y="7" width="10" height="10" rx="1" fill="var(--mw-brand-900)"/>
+      </svg>
+      <div class="label">Mark · 160px</div>
+    </div>
+    <div class="parent-cell">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 64px; height: 64px;">
+        <rect x="2" y="2" width="20" height="20" rx="2" stroke="var(--mw-ink)" stroke-width="1.5"/>
+        <rect x="7" y="7" width="10" height="10" rx="1" fill="var(--mw-brand-900)"/>
+      </svg>
+      <div style="display: flex; align-items: center; gap: 10px; font-family: var(--mw-font-serif); font-size: 22px; letter-spacing: -0.01em; font-weight: 500; margin-top: 14px; color: var(--mw-ink);">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 22px; height: 22px;">
+          <rect x="2" y="2" width="20" height="20" rx="2" stroke="var(--mw-ink)" stroke-width="1.5"/>
+          <rect x="7" y="7" width="10" height="10" rx="1" fill="var(--mw-brand-900)"/>
+        </svg>
+        Makefield Works
+      </div>
+      <div class="label">Horizontal lockup</div>
+    </div>
+    <div class="parent-cell" style="background: var(--mw-slate-950);">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 160px; height: 160px;">
+        <rect x="2" y="2" width="20" height="20" rx="2" stroke="white" stroke-width="1.5"/>
+        <rect x="7" y="7" width="10" height="10" rx="1" fill="white" fill-opacity="0.92"/>
+      </svg>
+      <div class="label" style="color: var(--mw-slate-400);">On slate-950</div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Product marks -->
+  <div class="kicker" style="margin-bottom: 12px;">02 · Product marks</div>
+  <div style="font-size: 14px; color: var(--mw-ink-2); max-width: 640px; line-height: 1.6; margin-bottom: 24px;">
+    Each product keeps the mark it ships with today. No recoloring, no lockup with Makefield — the endorsement lives in the footer line <em style="font-family: var(--mw-font-serif);">a Makefield Works project</em>, not next to the mark.
+  </div>
+
+  <div class="grid2">
+
+    <div class="mark-card">
+      <div class="mark-stage product-bg-ferscalc">
+        <img src="assets/ferscalc-mark.svg" alt="FERSCalc mark">
+      </div>
+      <div class="mark-meta">
+        <h3>FERSCalc</h3>
+        <div class="sub">Stylized teal wave/fern mark. The anchor product — its color informs <code class="mono">--mw-product-ferscalc</code>.</div>
+      </div>
+      <div class="mark-foot">
+        <span class="chip"><span class="chip-sw" style="background: var(--mw-product-ferscalc);"></span>#32747C</span>
+        <span>assets/ferscalc-mark.svg</span>
+      </div>
+    </div>
+
+    <div class="mark-card">
+      <div class="mark-stage product-bg-vpp">
+        <img src="assets/digwave-mark.png" alt="Digital Wave spiral">
+      </div>
+      <div class="mark-meta">
+        <h3>Visual Passage Planner 3</h3>
+        <div class="sub">Digital Wave's aqua spiral, carried over. VPP3 is the product name; DIGWAVE (legal) remains the domain until modernization.</div>
+      </div>
+      <div class="mark-foot">
+        <span class="chip"><span class="chip-sw" style="background: var(--mw-product-vpp);"></span>#7FCCC6</span>
+        <span>assets/digwave-mark.png</span>
+      </div>
+    </div>
+
+    <div class="mark-card">
+      <div class="mark-stage product-bg-manifest">
+        <img src="assets/manifest-logo.svg" alt="Manifest mark">
+      </div>
+      <div class="mark-meta">
+        <h3>Manifest</h3>
+        <div class="sub">Stacked planes — gold top, teal middle, slate base. Reads as "structured snapshots layered over time."</div>
+      </div>
+      <div class="mark-foot">
+        <span class="chip"><span class="chip-sw" style="background: var(--mw-product-manifest);"></span>#D7B642</span>
+        <span>assets/manifest-logo.svg</span>
+      </div>
+    </div>
+
+    <div class="mark-card">
+      <div class="mark-stage placeholder product-bg-gardener">
+        <div class="icon">04</div>
+        <div>Mark TBD</div>
+      </div>
+      <div class="mark-meta">
+        <h3>The Grunting Gardener</h3>
+        <div class="sub">No mark yet. Placeholder color reserved (<code class="mono">emerald-700</code>) until the brand is designed.</div>
+      </div>
+      <div class="mark-foot">
+        <span class="chip"><span class="chip-sw" style="background: var(--mw-product-gardener);"></span>#047857</span>
+        <span>— pending —</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Wordmarks & lockup -->
+  <div class="kicker" style="margin-bottom: 12px;">03 · Wordmarks & endorsement</div>
+  <div style="font-size: 14px; color: var(--mw-ink-2); max-width: 640px; line-height: 1.6; margin-bottom: 20px;">
+    How each product pairs its own wordmark with the parent endorsement. The endorsement is always quiet, smaller, italicized, in the footer or meta region — never co-equal.
+  </div>
+
+  <div style="background: var(--mw-surface); border: 1px solid var(--mw-paper-rule); border-radius: var(--mw-radius-xl); padding: 8px 28px;">
+    <div class="wordmark">
+      <div class="img-wrap"><img src="assets/ferscalc-mark.svg" alt=""></div>
+      <span class="wm-name" style="color: var(--mw-product-ferscalc);">FERSCalc</span>
+      <span class="wm-endorsement">a Makefield Works project</span>
+    </div>
+    <div class="wordmark">
+      <div class="img-wrap"><img src="assets/digwave-mark.png" alt=""></div>
+      <span class="wm-name" style="color: var(--mw-slate-800);">Visual Passage Planner 3</span>
+      <span class="wm-endorsement">a Makefield Works project</span>
+    </div>
+    <div class="wordmark">
+      <div class="img-wrap"><img src="assets/manifest-logo.svg" alt=""></div>
+      <span class="wm-name" style="color: var(--mw-slate-900);">Manifest</span>
+      <span class="wm-endorsement">a Makefield Works project</span>
+    </div>
+    <div class="wordmark">
+      <div class="img-wrap" style="color: var(--mw-ink-4);">—</div>
+      <span class="wm-name" style="color: var(--mw-ink-4);">The Grunting Gardener</span>
+      <span class="wm-endorsement">a Makefield Works project</span>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Rules -->
+  <div class="kicker" style="margin-bottom: 14px;">Rules</div>
+  <div class="grid2" style="gap: 40px; font-size: 14px; line-height: 1.7; color: var(--mw-ink-2);">
+    <div>
+      <div class="mono" style="margin-bottom: 8px; color: var(--mw-trust);">DO</div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Use the product's shipping mark as-is. Don't redraw it to "match" the parent.</li>
+        <li>Put the endorsement in the footer: <em>a Makefield Works project</em>.</li>
+        <li>Keep at least the mark's width of padding around it on any surface.</li>
+        <li>Flip outline colors for dark backgrounds — the parent mark should invert cleanly.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="mono" style="margin-bottom: 8px; color: var(--mw-warning);">DON'T</div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Don't lock up the parent mark next to a product mark. Keep them on separate surfaces.</li>
+        <li>Don't recolor a product mark to the parent blue.</li>
+        <li>Don't stretch, rotate, or outline any mark.</li>
+        <li>Don't put a product mark on a colored field other than white, slate-950, or its listed tinted background.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top: 48px;"></div>
+  <div class="mono" style="font-size: 11px; color: var(--mw-ink-4); letter-spacing: 0.08em; display: flex; justify-content: space-between;">
+    <span>marks.html · v1</span><span>assets/ · 1 parent · 3 product marks · 1 placeholder</span>
+  </div>
+
+</div>
+</body>
+</html>

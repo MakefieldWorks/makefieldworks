@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Makefield Works — Design System</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--mw-paper); font-family: var(--mw-font-sans); color: var(--mw-ink); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .page { max-width: 1120px; margin: 0 auto; padding: 72px 56px 96px; }
+  .kicker { font-family: var(--mw-font-mono); font-size: 11px; letter-spacing: var(--mw-tracking-kicker); text-transform: uppercase; color: var(--mw-ink-3); }
+  .hero-title { font-family: var(--mw-font-serif); font-size: 68px; line-height: 1.02; letter-spacing: -0.025em; font-weight: 500; margin: 18px 0 0; max-width: 22ch; text-wrap: pretty; }
+  .hero-title em { color: var(--mw-brand-900); font-style: italic; }
+  .hero-sub { font-size: 18px; line-height: 1.6; color: var(--mw-ink-2); max-width: 58ch; margin-top: 22px; }
+  .rule { height: 1px; background: var(--mw-paper-rule); margin: 56px 0; }
+
+  .section-label { display: grid; grid-template-columns: 160px 1fr; gap: 32px; align-items: baseline; margin-bottom: 24px; }
+  .section-label h2 { font-family: var(--mw-font-serif); font-size: 28px; line-height: 1.2; letter-spacing: -0.01em; font-weight: 500; margin: 0; }
+  .section-label p { font-size: 14px; color: var(--mw-ink-2); line-height: 1.6; margin: 6px 0 0; max-width: 48ch; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  .card {
+    background: var(--mw-surface); border: 1px solid var(--mw-paper-rule);
+    border-radius: var(--mw-radius-xl); padding: 28px; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; gap: 16px; min-height: 220px;
+    transition: border-color 160ms ease, transform 160ms ease;
+  }
+  .card:hover { border-color: var(--mw-slate-400); transform: translateY(-1px); }
+  .card-num { font-family: var(--mw-font-mono); font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.06em; }
+  .card-title { font-family: var(--mw-font-serif); font-size: 28px; line-height: 1.1; letter-spacing: -0.015em; font-weight: 500; }
+  .card-desc { font-size: 14px; line-height: 1.6; color: var(--mw-ink-2); flex: 1; }
+  .card-foot { display: flex; justify-content: space-between; align-items: center; font-family: var(--mw-font-mono); font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; padding-top: 14px; border-top: 1px solid var(--mw-paper-rule); }
+  .card-foot .arrow { transition: transform 160ms ease; display: inline-block; }
+  .card:hover .card-foot .arrow { transform: translateX(3px); color: var(--mw-ink); }
+
+  /* Preview swatches inside cards */
+  .preview { height: 112px; border-radius: var(--mw-radius-md); overflow: hidden; margin: -8px 0 4px; }
+
+  .preview-type { background: var(--mw-slate-50); display: flex; align-items: center; justify-content: center; gap: 16px; border: 1px solid var(--mw-rule); }
+  .preview-type span { font-size: 52px; line-height: 1; letter-spacing: -0.03em; font-weight: 500; }
+  .preview-type .sans { font-family: var(--mw-font-sans); }
+  .preview-type .serif { font-family: var(--mw-font-serif); color: var(--mw-brand-900); }
+  .preview-type .mono { font-family: var(--mw-font-mono); color: var(--mw-ink-3); font-size: 44px; }
+
+  .preview-color { display: grid; grid-template-columns: repeat(11, 1fr); }
+  .preview-color > div { height: 100%; }
+
+  .preview-tokens { display: flex; align-items: center; gap: 10px; padding: 0 20px; background: var(--mw-slate-50); border: 1px solid var(--mw-rule); justify-content: center; }
+  .preview-tokens .rdemo { background: var(--mw-brand-900); width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; color: white; font-family: var(--mw-font-mono); font-size: 10px; }
+
+  .preview-site { background: white; border: 1px solid var(--mw-rule); padding: 14px 18px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+  .preview-site .top { font-family: var(--mw-font-serif); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+  .preview-site .top svg { width: 10px; height: 10px; }
+  .preview-site .mid { font-family: var(--mw-font-serif); font-size: 22px; line-height: 1.08; letter-spacing: -0.02em; font-weight: 500; }
+  .preview-site .mid em { color: var(--mw-brand-900); font-style: italic; }
+  .preview-site .bot { font-family: var(--mw-font-mono); font-size: 9px; color: var(--mw-ink-3); letter-spacing: 0.12em; text-transform: uppercase; display: flex; justify-content: space-between; }
+
+  .preview-doc { background: var(--mw-slate-900); color: var(--mw-slate-100); padding: 16px 20px; font-family: var(--mw-font-mono); font-size: 12px; line-height: 1.55; letter-spacing: 0.02em; }
+  .preview-doc .prompt { color: var(--mw-brand-300); }
+  .preview-doc .cmt { color: var(--mw-slate-500); }
+  .preview-doc .em { color: var(--mw-emerald-400); }
+
+  .foot {
+    display: flex; justify-content: space-between; margin-top: 80px;
+    font-family: var(--mw-font-mono); font-size: 11px; color: var(--mw-ink-4); letter-spacing: 0.08em;
+    padding-top: 24px; border-top: 1px solid var(--mw-paper-rule);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 13px; height: 13px;">
+      <rect x="2" y="2" width="20" height="20" rx="2" stroke="var(--mw-ink)" stroke-width="1.5"/>
+      <rect x="7" y="7" width="10" height="10" rx="1" fill="var(--mw-brand-900)"/>
+    </svg>
+    <span class="kicker">Makefield Works · Design System v1</span>
+  </div>
+
+  <h1 class="hero-title">A quiet system for <em>four careful tools.</em></h1>
+  <p class="hero-sub">
+    The shared design DNA behind Makefield Works and its family of products — FERSCalc, Visual Passage Planner, Manifest, and The Grunting Gardener. Derived from FERSCalc's existing tokens so adoption cost is near zero. Every product keeps its own name, its own accent, and the footer line: <em style="font-family: var(--mw-font-serif);">a Makefield Works project.</em>
+  </p>
+
+  <div class="rule"></div>
+
+  <!-- Foundation -->
+  <div class="section-label">
+    <div class="kicker">Foundation</div>
+    <div>
+      <h2>The three things every surface shares.</h2>
+      <p>Tokens live in <code style="font-family: var(--mw-font-mono); font-size: 13px;">colors_and_type.css</code>. Everything else — component library, marketing site, product screens — derives from this.</p>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <a class="card" href="type.html">
+      <div class="preview preview-type">
+        <span class="sans">Aa</span>
+        <span class="serif">Aa</span>
+        <span class="mono">{ }</span>
+      </div>
+      <div class="card-num">01 / foundation</div>
+      <div class="card-title">Type</div>
+      <div class="card-desc">Inter for UI and body, Lora for display moments, JetBrains Mono for metadata and code. The scale, the rules, the patterns.</div>
+      <div class="card-foot"><span>type.html</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="color.html">
+      <div class="preview preview-color">
+        <div style="background: var(--mw-slate-50)"></div>
+        <div style="background: var(--mw-slate-200)"></div>
+        <div style="background: var(--mw-slate-400)"></div>
+        <div style="background: var(--mw-slate-700)"></div>
+        <div style="background: var(--mw-slate-950)"></div>
+        <div style="background: var(--mw-brand-200)"></div>
+        <div style="background: var(--mw-brand-500)"></div>
+        <div style="background: var(--mw-brand-700)"></div>
+        <div style="background: var(--mw-brand-900)"></div>
+        <div style="background: var(--mw-emerald-600)"></div>
+        <div style="background: var(--mw-amber-500)"></div>
+      </div>
+      <div class="card-num">02 / foundation</div>
+      <div class="card-title">Color</div>
+      <div class="card-desc">Slate neutrals, a shared brand-blue scale, emerald trust / amber caution / rose warning. Each product picks one accent.</div>
+      <div class="card-foot"><span>color.html</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="tokens.html">
+      <div class="preview preview-tokens">
+        <div class="rdemo" style="border-radius: 4px;">4</div>
+        <div class="rdemo" style="border-radius: 8px;">8</div>
+        <div class="rdemo" style="border-radius: 12px;">12</div>
+        <div class="rdemo" style="border-radius: 20px;">20</div>
+      </div>
+      <div class="card-num">03 / foundation</div>
+      <div class="card-title">Spacing & shape</div>
+      <div class="card-desc">A 4px base, a narrow radius vocabulary, shadows used sparingly. Rules and flat surfaces before lift.</div>
+      <div class="card-foot"><span>tokens.html</span><span class="arrow">→</span></div>
+    </a>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Applied -->
+  <div class="section-label">
+    <div class="kicker">Applied</div>
+    <div>
+      <h2>Where the system shows up in the wild.</h2>
+      <p>The parent-brand marketing site sets the editorial register. Each product picks up the DNA in its own way.</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <a class="card" href="makefieldworks.html">
+      <div class="preview preview-site">
+        <div class="top">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="2" stroke="var(--mw-ink)" stroke-width="2"/>
+            <rect x="7" y="7" width="10" height="10" rx="1" fill="var(--mw-brand-900)"/>
+          </svg>
+          Makefield Works
+        </div>
+        <div class="mid">Careful tools for planning, <em>one at a time.</em></div>
+        <div class="bot"><span>01 FERSCalc</span><span>02 VPP3</span><span>03 Manifest</span><span>04 Gardener</span></div>
+      </div>
+      <div class="card-num">04 / applied</div>
+      <div class="card-title">Parent-brand site</div>
+      <div class="card-desc">Reference implementation of the Makefield Works voice — editorial, restrained, indexical. Products are the destination; the site is the doorway.</div>
+      <div class="card-foot"><span>makefieldworks.html</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="directions.html">
+      <div class="preview preview-doc">
+        <div><span class="prompt">A</span> <span class="cmt">Endorsed &amp; Quiet</span> <span class="em">← chosen</span></div>
+        <div><span class="prompt">B</span> <span class="cmt">Documented &amp; Utility-first</span></div>
+        <div><span class="prompt">C</span> <span class="cmt">Index &amp; Dossier</span></div>
+        <div style="margin-top: 10px; color: var(--mw-slate-400);">// three directions · one picked</div>
+      </div>
+      <div class="card-num">05 / history</div>
+      <div class="card-title">Directions canvas</div>
+      <div class="card-desc">The three parent-brand directions explored before locking in A. Kept in-project as a record of what was considered and why.</div>
+      <div class="card-foot"><span>directions.html</span><span class="arrow">→</span></div>
+    </a>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Docs -->
+  <div class="section-label">
+    <div class="kicker">Documentation</div>
+    <div>
+      <h2>Read before you build anything new.</h2>
+      <p>Two plain-text files. The system is small enough to fit on two pages and is deliberately kept that way.</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <a class="card" href="README.md">
+      <div class="preview preview-doc">
+        <div><span class="cmt"># Makefield Works</span></div>
+        <div>A one-person software workshop.</div>
+        <div style="margin-top: 10px;"><span class="prompt">##</span> The family</div>
+        <div><span class="prompt">##</span> Brand architecture</div>
+        <div><span class="prompt">##</span> Visual DNA</div>
+      </div>
+      <div class="card-num">06 / docs</div>
+      <div class="card-title">README</div>
+      <div class="card-desc">Architecture, product roster, the "why this name" thinking, and the shared voice. Start here.</div>
+      <div class="card-foot"><span>README.md</span><span class="arrow">→</span></div>
+    </a>
+
+    <a class="card" href="SKILL.md">
+      <div class="preview preview-doc">
+        <div><span class="cmt"># SKILL.md</span></div>
+        <div>Designing for Makefield Works</div>
+        <div style="margin-top: 10px;"><span class="prompt">##</span> Voice — <span class="em">must not break</span></div>
+        <div><span class="prompt">##</span> Visual DNA</div>
+        <div><span class="prompt">##</span> Do's and don'ts</div>
+      </div>
+      <div class="card-num">07 / docs</div>
+      <div class="card-title">SKILL</div>
+      <div class="card-desc">Instructions for future AI-assisted design work. The voice rules, the do's and don'ts, and the onboarding checklist for a new product.</div>
+      <div class="card-foot"><span>SKILL.md</span><span class="arrow">→</span></div>
+    </a>
+  </div>
+
+  <div class="foot">
+    <span>index.html · Makefield Works design system v1</span>
+    <span>anchor product: FERSCalc</span>
+  </div>
+
+</div>
+</body>
+</html>

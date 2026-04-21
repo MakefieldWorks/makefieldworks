@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Makefield Works — Type</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html, body { margin:0; background: var(--mw-paper); font-family: var(--mw-font-sans); color: var(--mw-ink); }
+  .page { max-width: 1120px; margin: 0 auto; padding: 64px 56px 80px; }
+  .kicker { font-family: var(--mw-font-mono); font-size: 11px; letter-spacing: var(--mw-tracking-kicker); text-transform: uppercase; color: var(--mw-ink-3); }
+  .rule { height: 1px; background: var(--mw-rule); margin: 32px 0; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .row { display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--mw-rule); }
+  .row:last-child { border-bottom: 0; }
+  .label { font-family: var(--mw-font-mono); font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.06em; }
+  .mono { font-family: var(--mw-font-mono); }
+  .ink-3 { color: var(--mw-ink-3); }
+  .ink-2 { color: var(--mw-ink-2); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="kicker">Makefield Works · foundation</div>
+  <div style="font-family: var(--mw-font-serif); font-size: 56px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 500; margin-top: 10px;">
+    Type.
+  </div>
+  <div style="font-size: 17px; color: var(--mw-ink-2); max-width: 640px; margin-top: 14px; line-height: 1.6;">
+    Three families, each with a narrow job. Inter does the talking. Lora handles display moments that want a little warmth. JetBrains Mono stamps metadata, numbers, and code — never body copy.
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Families ────────────────────────────────────────────── -->
+  <div class="kicker" style="margin-bottom: 18px;">Families</div>
+  <div class="grid2">
+
+    <div>
+      <div class="label">sans · ui + body</div>
+      <div style="font-family: var(--mw-font-sans); font-size: 64px; line-height: 1; letter-spacing: -0.03em; font-weight: 500; margin-top: 8px; color: var(--mw-ink);">Inter</div>
+      <div class="ink-3" style="margin-top: 10px; font-size: 12px;">4 5 6 7 · Regular · Medium · Semibold · Bold</div>
+      <div style="font-family: var(--mw-font-sans); font-size: 16px; line-height: 1.6; color: var(--mw-ink-2); margin-top: 14px;">
+        The quick brown fox jumps over the lazy dog. 0123 4567 89. Used for every UI element, body copy, form labels, table rows, and 95% of marketing copy.
+      </div>
+    </div>
+
+    <div>
+      <div class="label">serif · display only</div>
+      <div style="font-family: var(--mw-font-serif); font-size: 64px; line-height: 1; letter-spacing: -0.02em; font-weight: 500; margin-top: 8px; color: var(--mw-ink);">Lora</div>
+      <div class="ink-3" style="margin-top: 10px; font-size: 12px;">4 5 6 · Regular · Medium · Semibold · Italic</div>
+      <div style="font-family: var(--mw-font-serif); font-size: 16px; line-height: 1.6; color: var(--mw-ink-2); margin-top: 14px;">
+        The quick brown fox jumps over the lazy dog. <em>Italic.</em> Used sparingly — hero headlines, pull-quotes, the occasional magazine-like section title. Never body.
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 48px;">
+    <div class="label">mono · metadata · numeric · code</div>
+    <div style="font-family: var(--mw-font-mono); font-size: 48px; line-height: 1; letter-spacing: -0.01em; font-weight: 500; margin-top: 8px; color: var(--mw-ink);">JetBrains Mono</div>
+    <div class="ink-3" style="margin-top: 10px; font-size: 12px;">4 5 · Regular · Medium</div>
+    <div style="font-family: var(--mw-font-mono); font-size: 13px; line-height: 1.6; color: var(--mw-ink-2); margin-top: 14px;">
+      const cashflow = compareScenarios([2027, 2029])  →  Δ +$1,240 /mo
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Scale ────────────────────────────────────────────────── -->
+  <div class="kicker" style="margin-bottom: 6px;">Scale</div>
+  <div class="ink-3" style="font-size: 13px; margin-bottom: 22px;">Fixed px steps. Predictable across products.</div>
+
+  <div class="row">
+    <div class="label">5xl · 64px · hero display</div>
+    <div style="font-family: var(--mw-font-serif); font-size: 64px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 500;">Clearer picture of what retirement could look like.</div>
+  </div>
+  <div class="row">
+    <div class="label">4xl · 52px · hero</div>
+    <div style="font-family: var(--mw-font-serif); font-size: 52px; line-height: 1.08; letter-spacing: -0.02em; font-weight: 500;">Plot the route. Read the charts.</div>
+  </div>
+  <div class="row">
+    <div class="label">3xl · 40px · page title</div>
+    <div style="font-family: var(--mw-font-sans); font-size: 40px; line-height: 1.15; letter-spacing: -0.015em; font-weight: 600;">What Makefield Works builds</div>
+  </div>
+  <div class="row">
+    <div class="label">2xl · 32px · subhead</div>
+    <div style="font-family: var(--mw-font-sans); font-size: 32px; line-height: 1.2; letter-spacing: -0.01em; font-weight: 600;">A family of local-first tools</div>
+  </div>
+  <div class="row">
+    <div class="label">xl · 24px · section</div>
+    <div style="font-family: var(--mw-font-sans); font-size: 24px; line-height: 1.25; letter-spacing: -0.005em; font-weight: 600;">Why it exists</div>
+  </div>
+  <div class="row">
+    <div class="label">lg · 20px · card title</div>
+    <div style="font-family: var(--mw-font-sans); font-size: 20px; line-height: 1.3; font-weight: 600;">FERS pension and supplement</div>
+  </div>
+  <div class="row">
+    <div class="label">md · 17px · lead body</div>
+    <div style="font-family: var(--mw-font-sans); font-size: 17px; line-height: 1.6; color: var(--mw-ink-2);">A local-first FERS retirement income calculator for comparing retirement timing, household cash flow, and tradeoffs.</div>
+  </div>
+  <div class="row">
+    <div class="label">base · 15px · body</div>
+    <div style="font-family: var(--mw-font-sans); font-size: 15px; line-height: 1.6; color: var(--mw-ink-2);">Start with the information you already have. Refine the rest later. Compare retirement dates side by side to see how timing changes household cash flow, taxes, and TSP longevity.</div>
+  </div>
+  <div class="row">
+    <div class="label">sm · 13px · secondary</div>
+    <div style="font-family: var(--mw-font-sans); font-size: 13px; line-height: 1.55; color: var(--mw-ink-3);">Takes about 10 minutes. Free for federal employees. No account needed.</div>
+  </div>
+  <div class="row">
+    <div class="label">xs · 12px · caption</div>
+    <div class="mono" style="font-size: 12px; letter-spacing: var(--mw-tracking-kicker); text-transform: uppercase; color: var(--mw-ink-3);">what Makefield builds</div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Patterns ──────────────────────────────────────────── -->
+  <div class="kicker" style="margin-bottom: 18px;">Patterns</div>
+
+  <div class="grid2" style="gap: 56px;">
+    <!-- Hero block -->
+    <div>
+      <div class="label" style="margin-bottom: 14px;">hero · display serif + body sans</div>
+      <div style="padding: 28px; background: var(--mw-surface); border: 1px solid var(--mw-rule); border-radius: var(--mw-radius-2xl);">
+        <div class="mono" style="font-size: 11px; color: var(--mw-trust); letter-spacing: var(--mw-tracking-kicker); text-transform: uppercase; margin-bottom: 14px;">
+          <span style="display: inline-block; width: 8px; height: 8px; background: var(--mw-trust); border-radius: 8px; vertical-align: middle; margin-right: 6px;"></span>
+          Free for federal employees
+        </div>
+        <div style="font-family: var(--mw-font-serif); font-size: 44px; line-height: 1.08; letter-spacing: -0.02em; font-weight: 500;">
+          Compare FERS retirement dates with a <em>clearer view</em> of monthly income.
+        </div>
+        <div style="font-size: 16px; line-height: 1.6; color: var(--mw-ink-2); margin-top: 16px;">
+          Built by a federal employee, for federal employees who want a clearer picture before the decision is final.
+        </div>
+      </div>
+    </div>
+
+    <!-- Metadata + numeric -->
+    <div>
+      <div class="label" style="margin-bottom: 14px;">metadata · mono kickers + numeric readouts</div>
+      <div style="padding: 28px; background: var(--mw-surface); border: 1px solid var(--mw-rule); border-radius: var(--mw-radius-2xl);">
+        <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: var(--mw-tracking-kicker); text-transform: uppercase;">Projected · year 1</div>
+        <div class="mono" style="font-family: var(--mw-font-mono); font-size: 44px; line-height: 1; letter-spacing: -0.01em; font-weight: 500; color: var(--mw-ink); margin-top: 10px;">
+          $5,460<span style="color: var(--mw-ink-3); font-size: 16px; margin-left: 4px;">/mo</span>
+        </div>
+        <div class="mono" style="font-size: 12px; color: var(--mw-trust); margin-top: 10px;">+ $1,240 vs continuing to work</div>
+        <div class="rule" style="margin: 18px 0;"></div>
+        <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.06em;">
+          audience: Federal employees<br/>
+          status: Public · usable beta<br/>
+          stack: SvelteKit · Tailwind v4
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 56px;">
+    <div class="label" style="margin-bottom: 14px;">long-form · body + kicker + italic accents</div>
+    <div style="padding: 32px; background: var(--mw-surface); border: 1px solid var(--mw-rule); border-radius: var(--mw-radius-2xl); max-width: 720px;">
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: var(--mw-tracking-kicker); text-transform: uppercase;">Why this exists</div>
+      <div style="font-family: var(--mw-font-serif); font-size: 34px; line-height: 1.15; letter-spacing: -0.015em; font-weight: 500; margin-top: 14px;">
+        Built by a federal employee, for federal employees.
+      </div>
+      <div style="font-size: 15px; line-height: 1.7; color: var(--mw-ink-2); margin-top: 18px;">
+        FERSCalc started as a personal tool to plan retirement dates and compare post-retirement income. When colleagues and friends started asking to use it, the project grew into a free, privacy-first calculator that any federal employee can use <em style="font-family: var(--mw-font-serif);">without sharing personal data, creating an account, or paying a subscription</em>.
+      </div>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top: 56px;"></div>
+
+  <!-- Rules -->
+  <div class="kicker" style="margin-bottom: 18px;">Rules</div>
+  <div class="grid2" style="gap: 48px; font-size: 14px; line-height: 1.7; color: var(--mw-ink-2);">
+    <div>
+      <div class="label" style="margin-bottom: 10px;">do</div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Use Inter for 95% of typography — UI, body, forms, tables, cards.</li>
+        <li>Reach for Lora only on hero display, pull-quotes, the one big number on a landing page.</li>
+        <li>Use mono for kickers (uppercase, tracking <code class="mono">0.18em</code>), numeric readouts, and code.</li>
+        <li>Keep display weights at 500 (medium). Bold is for emphasis, not display.</li>
+        <li>Set display with tight tracking (<code class="mono">-0.02em</code>) and snug leading (<code class="mono">1.05–1.15</code>).</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom: 10px;">don't</div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Don't set body copy in Lora — it tires the eye at 15px.</li>
+        <li>Don't use mono for paragraphs or navigation labels.</li>
+        <li>Don't mix three faces in one section; pick two.</li>
+        <li>Don't use all-caps for anything other than mono kickers.</li>
+        <li>Don't introduce a third display face per product — pick from Inter or Lora.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top: 48px;"></div>
+  <div class="mono" style="font-size: 11px; color: var(--mw-ink-4); letter-spacing: 0.08em; display: flex; justify-content: space-between;">
+    <span>type.html · v1</span><span>tokens → colors_and_type.css</span>
+  </div>
+
+</div>
+</body>
+</html>

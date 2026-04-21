@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Makefield Works Brand Mark</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Locked brand mark and archived alternates for Makefield Works."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .logo-page {
+      padding: 72px 0 88px;
+    }
+
+    .logo-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+      gap: 28px;
+      align-items: start;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--mw-paper-rule);
+    }
+
+    .logo-hero p {
+      margin: 18px 0 0;
+      max-width: 62ch;
+      color: var(--mw-ink-2);
+    }
+
+    .logo-note {
+      padding: 22px;
+      border: 1px solid var(--mw-paper-rule);
+      border-radius: var(--mw-radius-xl);
+      background: rgba(255, 255, 255, 0.56);
+    }
+
+    .logo-note p {
+      margin: 10px 0 0;
+      color: var(--mw-ink-2);
+    }
+
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .logo-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      border: 1px solid var(--mw-paper-rule);
+      border-radius: var(--mw-radius-xl);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.62);
+    }
+
+    .logo-card--recommended {
+      border-color: var(--mw-brand-700);
+      box-shadow: 0 0 0 1px rgba(29, 78, 216, 0.12);
+    }
+
+    .logo-stage {
+      display: grid;
+      place-items: center;
+      aspect-ratio: 5 / 4;
+      padding: 28px;
+      border-bottom: 1px solid var(--mw-paper-rule);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .logo-stage--slate {
+      background: var(--mw-slate-950);
+      color: white;
+    }
+
+    .logo-stage--paper {
+      background: var(--mw-paper);
+    }
+
+    .logo-stage img {
+      width: min(100%, 140px);
+      height: auto;
+    }
+
+    .logo-body {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 22px;
+      flex: 1;
+    }
+
+    .logo-label,
+    .logo-chip,
+    .usage-list li::marker {
+      font-family: var(--mw-font-mono);
+      font-size: var(--mw-text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-label {
+      color: var(--mw-ink-3);
+      margin: 0;
+    }
+
+    .logo-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: var(--mw-radius-pill);
+      background: rgba(29, 78, 216, 0.1);
+      color: var(--mw-brand-700);
+      width: fit-content;
+    }
+
+    .logo-body h2,
+    .specimen-card h2,
+    .decision-block h2 {
+      margin: 0;
+      font-family: var(--mw-font-serif);
+      font-size: 2rem;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      font-weight: 500;
+    }
+
+    .logo-body p,
+    .decision-block p,
+    .specimen-card p {
+      margin: 0;
+      color: var(--mw-ink-2);
+    }
+
+    .usage-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--mw-ink-2);
+    }
+
+    .usage-list li + li {
+      margin-top: 8px;
+    }
+
+    .specimen-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .specimen-card,
+    .decision-block {
+      border: 1px solid var(--mw-paper-rule);
+      border-radius: var(--mw-radius-xl);
+      background: rgba(255, 255, 255, 0.62);
+      padding: 24px;
+    }
+
+    .lockup-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 0;
+      border-top: 1px solid var(--mw-paper-rule);
+    }
+
+    .lockup-row:first-of-type {
+      margin-top: 18px;
+    }
+
+    .lockup-row img {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 auto;
+    }
+
+    .lockup-wordmark {
+      font-family: var(--mw-font-serif);
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lockup-meta {
+      margin-left: auto;
+      color: var(--mw-ink-3);
+      font-size: var(--mw-text-sm);
+      font-style: italic;
+    }
+
+    .decision-block {
+      margin-top: 48px;
+    }
+
+    .decision-block strong {
+      color: var(--mw-ink);
+      font-weight: 600;
+    }
+
+    .decision-block p + p {
+      margin-top: 12px;
+    }
+
+    @media (max-width: 980px) {
+      .logo-hero,
+      .logo-grid,
+      .specimen-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell topbar">
+      <a class="site-mark" href="index.html" aria-label="Makefield Works home">
+        <img class="site-mark__icon" src="assets/makefield-works-mark.svg" alt="">
+        <span>Makefield Works</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="design_language/index.html">Design Language</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="logo-page">
+    <div class="shell">
+      <section class="logo-hero">
+        <div>
+          <p class="section-heading__eyebrow">Brand mark locked</p>
+          <h1>The Makefield Works mark is now set.</h1>
+          <p>
+            Makefield Works needs a mark that can sit behind retirement planning,
+            sailing software, operations tooling, and future products without dragging
+            the family toward any one category. The chosen mark stays geometric,
+            restrained, and durable.
+          </p>
+        </div>
+        <aside class="logo-note">
+          <p class="side-card__label">Locked decision</p>
+          <p>
+            <strong>Workshop Frame</strong> is the official Makefield Works mark. It is
+            abstract enough to travel, distinct at favicon size, and restrained enough
+            to stay in the background behind the product brands.
+          </p>
+        </aside>
+      </section>
+
+      <section class="logo-grid" aria-label="Logo directions">
+        <article class="logo-card logo-card--recommended">
+          <div class="logo-stage logo-stage--paper">
+            <img src="assets/logo-workshop-frame.svg" alt="Workshop Frame logo">
+          </div>
+          <div class="logo-body">
+            <p class="logo-label">Direction 01</p>
+            <span class="logo-chip">Locked</span>
+            <h2>Workshop Frame</h2>
+            <p>
+              A piece of work held inside a workshop boundary. Simple geometry, one
+              outer frame, one inner plate. It feels like a maker’s imprint without
+              becoming rustic or literal.
+            </p>
+            <ul class="usage-list">
+              <li>Best favicon and header mark</li>
+              <li>Feels stable across very different products</li>
+              <li>Already present in your current site direction</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="logo-card">
+          <div class="logo-stage logo-stage--paper">
+            <img src="assets/logo-confluence-grid.svg" alt="Confluence Grid logo">
+          </div>
+          <div class="logo-body">
+            <p class="logo-label">Direction 02</p>
+            <h2>Confluence Grid</h2>
+            <p>
+              Two crossing axes inside a rounded frame. This is the most place-based
+              option, a quiet nod to river, canal, and crossroads without turning the
+              logo into landscape illustration.
+            </p>
+            <ul class="usage-list">
+              <li>Useful geographic subtext</li>
+              <li>More diagram-like than brand-like</li>
+              <li>Archived alternate, not selected</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="logo-card">
+          <div class="logo-stage logo-stage--paper">
+            <img src="assets/logo-makers-stamp.svg" alt="Maker's Stamp logo">
+          </div>
+          <div class="logo-body">
+            <p class="logo-label">Direction 03</p>
+            <h2>Maker&apos;s Stamp</h2>
+            <p>
+              A monogram-like square mark built from the initials. It feels more
+              proprietary and more traditional. Cleaner than many lettermarks, but
+              less neutral than the frame.
+            </p>
+            <ul class="usage-list">
+              <li>Most brand-forward option</li>
+              <li>Harder to read at tiny sizes</li>
+              <li>Archived alternate, not selected</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="specimen-grid" aria-label="Logo specimens">
+        <article class="specimen-card">
+          <p class="section-heading__eyebrow">Specimen</p>
+          <h2>How the recommended mark behaves.</h2>
+          <p>
+            The strongest version is still the simple one: icon first, quiet wordmark,
+            no extra decoration. It can live in the site header, favicon, or footer
+            endorsement without stealing attention from the product names.
+          </p>
+          <div class="lockup-row">
+            <img src="assets/makefield-works-mark.svg" alt="">
+            <span class="lockup-wordmark">Makefield Works</span>
+            <span class="lockup-meta">parent brand</span>
+          </div>
+          <div class="lockup-row">
+            <img src="assets/makefield-works-mark.svg" alt="">
+            <span class="lockup-wordmark" style="font-size: 1.25rem;">Makefield Works</span>
+            <span class="lockup-meta">footer / meta use</span>
+          </div>
+        </article>
+
+        <article class="specimen-card">
+          <p class="section-heading__eyebrow">Dark surface</p>
+          <h2>It also holds up on slate.</h2>
+          <p>
+            This matters because you may want it on software splash screens, docs, or
+            repository art later. The frame remains crisp when reversed without adding
+            a second accent color.
+          </p>
+          <div class="logo-stage logo-stage--slate" style="margin-top: 18px; border: 0; border-radius: var(--mw-radius-lg);">
+            <img src="assets/makefield-works-mark-reverse.svg" alt="Makefield Works mark reversed">
+          </div>
+        </article>
+      </section>
+
+      <section class="decision-block">
+        <p class="section-heading__eyebrow">Decision</p>
+        <h2>What is locked.</h2>
+        <p>
+          <strong>Direction 01 is locked.</strong> It is the most flexible and least likely
+          to age badly. It says “workshop” and “container” without saying finance,
+          sailing, gardening, or enterprise software.
+        </p>
+        <p>
+          Directions 02 and 03 are kept as historical alternates only. They are
+          useful contrast, but Direction 01 has the right amount of identity for an
+          umbrella brand whose job is endorsement, not attention capture.
+        </p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Makefield Works — Tokens</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html, body { margin:0; background: var(--mw-paper); font-family: var(--mw-font-sans); color: var(--mw-ink); }
+  .page { max-width: 1120px; margin: 0 auto; padding: 64px 56px 80px; }
+  .kicker { font-family: var(--mw-font-mono); font-size: 11px; letter-spacing: var(--mw-tracking-kicker); text-transform: uppercase; color: var(--mw-ink-3); }
+  .rule { height: 1px; background: var(--mw-rule); margin: 32px 0; }
+  .mono { font-family: var(--mw-font-mono); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: var(--mw-surface); border: 1px solid var(--mw-rule); padding: 20px; }
+  .row { display: grid; grid-template-columns: 90px 1fr auto; gap: 20px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--mw-rule); }
+  .row:last-child { border-bottom: 0; }
+  .swatch-note { font-family: var(--mw-font-mono); font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; }
+  .space-visual { height: 12px; background: var(--mw-brand-600); border-radius: 2px; }
+  .radius-demo { background: var(--mw-brand-900); width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; color: white; font-family: var(--mw-font-mono); font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="kicker">Makefield Works · foundation</div>
+  <div style="font-family: var(--mw-font-serif); font-size: 56px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 500; margin-top: 10px;">
+    Spacing, radii, shadows.
+  </div>
+  <div style="font-size: 17px; color: var(--mw-ink-2); max-width: 640px; margin-top: 14px; line-height: 1.6;">
+    A 4px base, a narrow radius vocabulary, and shadows used sparingly. The goal is predictability across products — spacing choices shouldn't be re-invented on each screen.
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Spacing -->
+  <div class="kicker" style="margin-bottom: 14px;">Spacing scale · 4px base</div>
+  <div class="card" style="border-radius: var(--mw-radius-lg);">
+    <div class="row"><div class="mono" style="font-size:12px;">space-1</div><div class="space-visual" style="width: 4px;"></div><div class="swatch-note">4px · rare · icon gaps</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-2</div><div class="space-visual" style="width: 8px;"></div><div class="swatch-note">8px · chip padding</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-3</div><div class="space-visual" style="width: 12px;"></div><div class="swatch-note">12px · tight stack</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-4</div><div class="space-visual" style="width: 16px;"></div><div class="swatch-note">16px · default UI gap</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-5</div><div class="space-visual" style="width: 20px;"></div><div class="swatch-note">20px · card padding y</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-6</div><div class="space-visual" style="width: 24px;"></div><div class="swatch-note">24px · card padding x · section gap</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-8</div><div class="space-visual" style="width: 32px;"></div><div class="swatch-note">32px · section break</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-10</div><div class="space-visual" style="width: 40px;"></div><div class="swatch-note">40px · major section</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-12</div><div class="space-visual" style="width: 48px;"></div><div class="swatch-note">48px · hero padding</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-16</div><div class="space-visual" style="width: 64px;"></div><div class="swatch-note">64px · page-level rhythm</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-20</div><div class="space-visual" style="width: 80px;"></div><div class="swatch-note">80px · between major blocks</div></div>
+    <div class="row"><div class="mono" style="font-size:12px;">space-24</div><div class="space-visual" style="width: 96px;"></div><div class="swatch-note">96px · marketing hero top/bottom</div></div>
+  </div>
+
+  <div class="mono" style="margin-top: 14px; font-size: 11px; color: var(--mw-ink-4); letter-spacing: 0.04em;">
+    Maps cleanly to Tailwind's spacing scale (1 = 0.25rem). Prefer even steps (2, 4, 6, 8, 12, 16). Odd steps exist for tight UI gaps only.
+  </div>
+
+  <!-- Radii -->
+  <div class="kicker" style="margin-top: 56px; margin-bottom: 14px;">Radii · narrow vocabulary</div>
+  <div class="grid3">
+    <div class="card" style="border-radius: var(--mw-radius-lg);">
+      <div class="radius-demo" style="border-radius: var(--mw-radius-sm);">4</div>
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; margin-top: 12px;">radius-sm · 4px</div>
+      <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 4px;">Chips, mono badges, per-product accent squares.</div>
+    </div>
+    <div class="card" style="border-radius: var(--mw-radius-lg);">
+      <div class="radius-demo" style="border-radius: var(--mw-radius-md);">8</div>
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; margin-top: 12px;">radius-md · 8px</div>
+      <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 4px;">Standard buttons, inputs, compact cards, code blocks.</div>
+    </div>
+    <div class="card" style="border-radius: var(--mw-radius-lg);">
+      <div class="radius-demo" style="border-radius: var(--mw-radius-lg);">12</div>
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; margin-top: 12px;">radius-lg · 12px</div>
+      <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 4px;">Standard cards, panels, data tables.</div>
+    </div>
+    <div class="card" style="border-radius: var(--mw-radius-lg);">
+      <div class="radius-demo" style="border-radius: var(--mw-radius-xl);">20</div>
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; margin-top: 12px;">radius-xl · 20px</div>
+      <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 4px;">Marketing cards, feature tiles.</div>
+    </div>
+    <div class="card" style="border-radius: var(--mw-radius-lg);">
+      <div class="radius-demo" style="border-radius: var(--mw-radius-2xl);">28</div>
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; margin-top: 12px;">radius-2xl · 28px</div>
+      <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 4px;">Hero surfaces (matches FERSCalc's rounded-[1.75rem]).</div>
+    </div>
+    <div class="card" style="border-radius: var(--mw-radius-lg);">
+      <div class="radius-demo" style="border-radius: var(--mw-radius-pill); width: 120px; height: 44px;">pill</div>
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; margin-top: 12px;">radius-pill · 999px</div>
+      <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 4px;">CTAs, status pills, tab buttons. FERSCalc's trust badges use this.</div>
+    </div>
+  </div>
+
+  <!-- Shadows -->
+  <div class="kicker" style="margin-top: 56px; margin-bottom: 14px;">Shadows · used sparingly</div>
+  <div style="font-size: 14px; color: var(--mw-ink-2); margin-bottom: 18px; max-width: 720px;">
+    Prefer <strong>rules and flat surfaces</strong> over shadows. The only surfaces that consistently get shadows are the Opens-Calculator CTA, the top-layer dropdown/popover, and the terminal specimen on landing pages.
+  </div>
+
+  <div class="grid3">
+    <div style="padding: 24px; background: var(--mw-surface); box-shadow: var(--mw-shadow-xs); border-radius: var(--mw-radius-lg);">
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em;">shadow-xs</div>
+      <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 6px; line-height: 1.5;">Subtle lift on secondary buttons.</div>
+    </div>
+    <div style="padding: 24px; background: var(--mw-surface); box-shadow: var(--mw-shadow-sm); border-radius: var(--mw-radius-lg);">
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em;">shadow-sm</div>
+      <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 6px; line-height: 1.5;">Default floating card. Dropdowns.</div>
+    </div>
+    <div style="padding: 24px; background: var(--mw-surface); box-shadow: var(--mw-shadow-md); border-radius: var(--mw-radius-lg);">
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em;">shadow-md</div>
+      <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 6px; line-height: 1.5;">Primary CTA. Popovers.</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <div style="padding: 32px; background: var(--mw-surface); box-shadow: var(--mw-shadow-lg); border-radius: var(--mw-radius-xl);">
+      <div class="mono" style="font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em;">shadow-lg</div>
+      <div style="font-size: 14px; color: var(--mw-ink-2); margin-top: 8px; line-height: 1.55; max-width: 560px;">Reserved: terminal specimens, modal dialogs, the floating sticky CTA on long landing pages. Large and soft, positioned downward. Never decorative.</div>
+    </div>
+  </div>
+
+  <!-- Rules -->
+  <div class="rule" style="margin-top: 48px;"></div>
+  <div class="kicker" style="margin-bottom: 18px;">Rules</div>
+
+  <div class="grid2" style="gap: 40px; font-size: 14px; line-height: 1.7; color: var(--mw-ink-2);">
+    <div>
+      <div class="mono" style="margin-bottom: 8px; color: var(--mw-trust);">DO</div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Stay on the 4px grid. No 7px / 13px one-offs.</li>
+        <li>Use <code class="mono">radius-lg (12px)</code> as the default card radius.</li>
+        <li>Prefer <code class="mono">border-1 + var(--mw-rule)</code> over shadow for card edges.</li>
+        <li>Use <code class="mono">radius-pill</code> for actions that feel like a commitment (Open Calculator, Plot Route).</li>
+      </ul>
+    </div>
+    <div>
+      <div class="mono" style="margin-bottom: 8px; color: var(--mw-warning);">DON'T</div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Don't stack shadows — one per element, max.</li>
+        <li>Don't use <code class="mono">radius-2xl</code> on standard cards — it's for hero surfaces only.</li>
+        <li>Don't invent a new shadow — if you need a different one, the design probably needs to be flatter.</li>
+        <li>Don't mix radii within a single component (e.g. <code class="mono">rounded-lg</code> card with <code class="mono">rounded-md</code> header).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top: 48px;"></div>
+  <div class="mono" style="font-size: 11px; color: var(--mw-ink-4); letter-spacing: 0.08em; display: flex; justify-content: space-between;">
+    <span>tokens.html · v1</span><span>tokens → colors_and_type.css</span>
+  </div>
+
+</div>
+</body>
+</html>

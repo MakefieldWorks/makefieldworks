@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Makefield Works Confluence Grid">
+  <rect x="18" y="18" width="92" height="92" rx="18" fill="none" stroke="currentColor" stroke-width="8"/>
+  <path d="M40 18V110" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+  <path d="M18 56H110" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+</svg>

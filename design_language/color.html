@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Makefield Works — Color</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html, body { margin:0; background: var(--mw-paper); font-family: var(--mw-font-sans); color: var(--mw-ink); }
+  .page { max-width: 1120px; margin: 0 auto; padding: 64px 56px 80px; }
+  .kicker { font-family: var(--mw-font-mono); font-size: 11px; letter-spacing: var(--mw-tracking-kicker); text-transform: uppercase; color: var(--mw-ink-3); }
+  .rule { height: 1px; background: var(--mw-rule); margin: 32px 0; }
+  .mono { font-family: var(--mw-font-mono); font-size: 11px; color: var(--mw-ink-3); letter-spacing: 0.04em; }
+  .scale { display: grid; grid-template-columns: repeat(11, 1fr); gap: 0; border: 1px solid var(--mw-rule); border-radius: var(--mw-radius-md); overflow: hidden; }
+  .swatch { height: 88px; position: relative; }
+  .swatch-meta { padding: 8px 10px; background: var(--mw-surface); border-top: 1px solid var(--mw-rule); display: flex; justify-content: space-between; font-family: var(--mw-font-mono); font-size: 10px; color: var(--mw-ink-3); letter-spacing: 0.03em; }
+  .scale.wrap .col { border-right: 1px solid var(--mw-rule); }
+  .scale.wrap .col:last-child { border-right: none; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .card { background: var(--mw-surface); border: 1px solid var(--mw-rule); border-radius: var(--mw-radius-xl); padding: 24px; }
+  .product-row { display: grid; grid-template-columns: 60px 1fr auto; gap: 20px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--mw-rule); }
+  .product-row:last-child { border-bottom: 0; }
+  .swatch-chip { width: 44px; height: 44px; border-radius: var(--mw-radius-sm); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="kicker">Makefield Works · foundation</div>
+  <div style="font-family: var(--mw-font-serif); font-size: 56px; line-height: 1.05; letter-spacing: -0.02em; font-weight: 500; margin-top: 10px;">
+    Color.
+  </div>
+  <div style="font-size: 17px; color: var(--mw-ink-2); max-width: 640px; margin-top: 14px; line-height: 1.6;">
+    One neutral, one brand, three accents. Color earns its place — if a surface can be slate, it should be. Saturated color is reserved for meaning (trust, caution, warning) and for per-product identity.
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- Slate -->
+  <div class="kicker" style="margin-bottom: 10px;">Slate · neutral</div>
+  <div style="font-size: 14px; color: var(--mw-ink-2); margin-bottom: 18px; max-width: 720px;">The workhorse. 95% of UI — backgrounds, text, rules, dividers, chips — is slate. Tailwind's canonical slate scale (50–950). Mirrors FERSCalc exactly.</div>
+  <div class="scale">
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-50)"></div>
+      <div class="swatch-meta"><span>50</span><span>f8fafc</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-100)"></div>
+      <div class="swatch-meta"><span>100</span><span>f1f5f9</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-200)"></div>
+      <div class="swatch-meta"><span>200</span><span>e2e8f0</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-300)"></div>
+      <div class="swatch-meta"><span>300</span><span>cbd5e1</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-400)"></div>
+      <div class="swatch-meta"><span>400</span><span>94a3b8</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-500)"></div>
+      <div class="swatch-meta"><span>500</span><span>64748b</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-600)"></div>
+      <div class="swatch-meta"><span>600</span><span>475569</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-700)"></div>
+      <div class="swatch-meta"><span>700</span><span>334155</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-800)"></div>
+      <div class="swatch-meta"><span>800</span><span>1e293b</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-900)"></div>
+      <div class="swatch-meta"><span>900</span><span>0f172a</span></div>
+    </div>
+    <div class="col">
+      <div class="swatch" style="background: var(--mw-slate-950)"></div>
+      <div class="swatch-meta"><span>950</span><span>020617</span></div>
+    </div>
+  </div>
+
+  <div class="mono" style="margin-top: 14px; display: flex; justify-content: space-between;">
+    <span>backgrounds · 50 — 100</span>
+    <span>text body · 600 — 700</span>
+    <span>text headline · 900 — 950</span>
+  </div>
+
+  <!-- Brand -->
+  <div class="kicker" style="margin-top: 56px; margin-bottom: 10px;">Brand blue</div>
+  <div style="font-size: 14px; color: var(--mw-ink-2); margin-bottom: 18px; max-width: 720px;">The shared brand accent across every product. Anchored at <code class="mono">brand-700</code> for interactive elements, <code class="mono">brand-900</code> for marks and serif-italic accents. Mirrors FERSCalc's own brand scale — note brand-900 is custom (<code class="mono">#1e3a5f</code>), not Tailwind default.</div>
+  <div class="scale">
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-50)"></div><div class="swatch-meta"><span>50</span><span>eff6ff</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-100)"></div><div class="swatch-meta"><span>100</span><span>dbeafe</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-200)"></div><div class="swatch-meta"><span>200</span><span>bfdbfe</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-300)"></div><div class="swatch-meta"><span>300</span><span>93c5fd</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-400)"></div><div class="swatch-meta"><span>400</span><span>60a5fa</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-500)"></div><div class="swatch-meta"><span>500</span><span>3b82f6</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-600)"></div><div class="swatch-meta"><span>600</span><span>2563eb</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-700)"></div><div class="swatch-meta"><span>700</span><span>1d4ed8</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-800)"></div><div class="swatch-meta"><span>800</span><span>1e40af</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-900)"></div><div class="swatch-meta"><span>900</span><span>1e3a5f</span></div></div>
+    <div class="col"><div class="swatch" style="background: var(--mw-brand-950)"></div><div class="swatch-meta"><span>950</span><span>172554</span></div></div>
+  </div>
+  <div class="mono" style="margin-top: 14px; display: flex; justify-content: space-between;">
+    <span>tint bg · 50 — 100</span>
+    <span>link · button · 600 — 700</span>
+    <span>mark · italic accent · 900</span>
+  </div>
+
+  <!-- Status accents -->
+  <div class="kicker" style="margin-top: 56px; margin-bottom: 10px;">Status accents</div>
+  <div style="font-size: 14px; color: var(--mw-ink-2); margin-bottom: 18px; max-width: 720px;">Used for meaning, not decoration. Each accent has a narrow, defined job.</div>
+
+  <div class="grid2" style="gap: 20px;">
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <div style="height: 88px; background: var(--mw-emerald-600); display: flex; align-items: flex-end; padding: 14px 18px; color: white; font-family: var(--mw-font-mono); font-size: 11px; letter-spacing: 0.06em;">emerald-600 · #059669</div>
+      <div style="padding: 18px;">
+        <div style="font-weight: 600; font-size: 15px; color: var(--mw-ink);">Trust</div>
+        <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 6px; line-height: 1.55;">Free / no-account / local-first pills. "Data stays in your browser" badges. Positive deltas in finance readouts. Never used as a primary action color.</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <div style="height: 88px; background: var(--mw-amber-500); display: flex; align-items: flex-end; padding: 14px 18px; color: var(--mw-slate-950); font-family: var(--mw-font-mono); font-size: 11px; letter-spacing: 0.06em;">amber-500 · #f59e0b</div>
+      <div style="padding: 18px;">
+        <div style="font-weight: 600; font-size: 15px; color: var(--mw-ink);">Caution</div>
+        <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 6px; line-height: 1.55;">Stress-test badges. Monte Carlo probability-of-depletion. "Planning approximation" labels on coverage gaps. Not used for errors.</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <div style="height: 88px; background: var(--mw-rose-500); display: flex; align-items: flex-end; padding: 14px 18px; color: white; font-family: var(--mw-font-mono); font-size: 11px; letter-spacing: 0.06em;">rose-500 · #f43f5e</div>
+      <div style="padding: 18px;">
+        <div style="font-weight: 600; font-size: 15px; color: var(--mw-ink);">Warning · Destructive</div>
+        <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 6px; line-height: 1.55;">Validation errors. Negative deltas. Delete-scenario confirmations. Reserved — overusing rose makes products feel angry.</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding: 0; overflow: hidden;">
+      <div style="height: 88px; background: var(--mw-paper); border-bottom: 1px solid var(--mw-rule); display: flex; align-items: flex-end; padding: 14px 18px; color: var(--mw-ink-2); font-family: var(--mw-font-mono); font-size: 11px; letter-spacing: 0.06em;">paper · #fafaf7 <span style="margin-left:auto;">parent-only</span></div>
+      <div style="padding: 18px;">
+        <div style="font-weight: 600; font-size: 15px; color: var(--mw-ink);">Paper (parent brand)</div>
+        <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 6px; line-height: 1.55;">Warm off-white background used <em>only</em> on makefieldworks.com and design-system docs. Products themselves stay white / slate-950. Signals "editorial frame around the workshop."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Per-product accents -->
+  <div class="kicker" style="margin-top: 56px; margin-bottom: 10px;">Per-product accents</div>
+  <div style="font-size: 14px; color: var(--mw-ink-2); margin-bottom: 18px; max-width: 720px;">Each product picks one accent from the brand or emerald scales. The accent shows up on the wordmark dot, active navigation state, and one-off moments — not on every button.</div>
+
+  <div class="card" style="padding: 0;">
+    <div style="padding: 20px 24px;">
+      <div class="product-row">
+        <div class="swatch-chip" style="background: var(--mw-product-ferscalc)"></div>
+        <div>
+          <div style="font-weight: 600; font-size: 15px; color: var(--mw-ink);">FERSCalc</div>
+          <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 2px;">Federal retirement planning — teal wave (from shipping mark).</div>
+        </div>
+        <div class="mono">#32747C</div>
+      </div>
+      <div class="product-row">
+        <div class="swatch-chip" style="background: var(--mw-product-vpp)"></div>
+        <div>
+          <div style="font-weight: 600; font-size: 15px; color: var(--mw-ink);">Visual Passage Planner 3</div>
+          <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 2px;">Ocean voyage planning — DIGWAVE's aqua spiral.</div>
+        </div>
+        <div class="mono">#7FCCC6</div>
+      </div>
+      <div class="product-row">
+        <div class="swatch-chip" style="background: var(--mw-product-manifest)"></div>
+        <div>
+          <div style="font-weight: 600; font-size: 15px; color: var(--mw-ink);">Manifest</div>
+          <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 2px;">Local-first project snapshots — stacked gold plane.</div>
+        </div>
+        <div class="mono">#D7B642</div>
+      </div>
+      <div class="product-row">
+        <div class="swatch-chip" style="background: var(--mw-product-gardener)"></div>
+        <div>
+          <div style="font-weight: 600; font-size: 15px; color: var(--mw-ink);">The Grunting Gardener</div>
+          <div style="font-size: 13px; color: var(--mw-ink-2); margin-top: 2px;">Garden planning — earthy emerald (placeholder, no mark yet).</div>
+        </div>
+        <div class="mono">emerald-700 · #047857</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rules -->
+  <div class="rule" style="margin-top: 48px;"></div>
+  <div class="kicker" style="margin-bottom: 18px;">Rules</div>
+
+  <div class="grid2" style="gap: 40px; font-size: 14px; line-height: 1.7; color: var(--mw-ink-2);">
+    <div>
+      <div class="mono" style="margin-bottom: 8px; color: var(--mw-trust);">DO</div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Use slate for almost everything. Default to <code class="mono">slate-200</code> for rules, <code class="mono">slate-500–700</code> for body, <code class="mono">slate-950</code> for headlines.</li>
+        <li>Use <code class="mono">brand-700</code> for primary buttons, links, and interactive focus.</li>
+        <li>Use emerald only where it carries meaning — trust, positive deltas, "free" pills.</li>
+        <li>Support a <code class="mono">.dark</code> class on <code class="mono">html</code>. Flip background to <code class="mono">slate-950</code>, ink to <code class="mono">slate-50–300</code>.</li>
+        <li>Keep contrast at WCAG AA or better for all body text.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="mono" style="margin-bottom: 8px; color: var(--mw-warning);">DON'T</div>
+      <ul style="margin: 0; padding-left: 18px;">
+        <li>Don't use gradients. No gradient backgrounds, no gradient text. One color per surface.</li>
+        <li>Don't introduce new hues per product — pick from the scales.</li>
+        <li>Don't use rose for anything non-destructive — it reads as "error," not "accent."</li>
+        <li>Don't put paper (<code class="mono">#fafaf7</code>) inside products. Paper is the parent-brand frame.</li>
+        <li>Don't stack two accent colors side-by-side in one card — pick one.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="rule" style="margin-top: 48px;"></div>
+  <div class="mono" style="font-size: 11px; color: var(--mw-ink-4); letter-spacing: 0.08em; display: flex; justify-content: space-between;">
+    <span>color.html · v1</span><span>tokens → colors_and_type.css</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Makefield Works Maker's Stamp">
+  <rect x="16" y="16" width="96" height="96" rx="20" fill="none" stroke="currentColor" stroke-width="8"/>
+  <path
+    d="M34 88V40L54 68L74 40V88M94 88V40"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

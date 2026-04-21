@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parent Brand — Direction Picker</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#f0eee9; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+/* ──────────────────────────────────────────────────────
+   Three parent-brand directions, all built on FERSCalc's real
+   token set (Inter, Lora, slate neutrals, blue brand scale, emerald
+   trust accent, .dark toggle) so the parent and the anchor product
+   share a real DNA, not a speculative one.
+
+   What varies between A/B/C is: parent-brand VOICE on top of that
+   constant — how much grid structure shows, how mono-forward the
+   type is, and how the product family is framed visually.
+   ────────────────────────────────────────────────────── */
+
+// Real FERSCalc tokens — the shared constant
+const F = {
+  slate50:  '#f8fafc',
+  slate100: '#f1f5f9',
+  slate200: '#e2e8f0',
+  slate300: '#cbd5e1',
+  slate400: '#94a3b8',
+  slate500: '#64748b',
+  slate600: '#475569',
+  slate700: '#334155',
+  slate800: '#1e293b',
+  slate900: '#0f172a',
+  slate950: '#020617',
+  brand500: '#3b82f6',
+  brand600: '#2563eb',
+  brand700: '#1d4ed8',
+  brand800: '#1e40af',
+  brand900: '#1e3a5f',
+  brand950: '#172554',
+  emerald400:'#34d399',
+  emerald500:'#10b981',
+  emerald600:'#059669',
+  emerald700:'#047857',
+  amber500: '#f59e0b',
+  rose500:  '#f43f5e',
+  inter: '"Inter", ui-sans-serif, system-ui, sans-serif',
+  lora:  '"Lora", Georgia, serif',
+  mono:  '"JetBrains Mono", ui-monospace, monospace',
+  plex:  '"IBM Plex Mono", ui-monospace, monospace',
+};
+
+/* Shared mini product card (each direction restyles the wrapper, not this) */
+function Product({ name, sub, badge, accent }) {
+  return (
+    <div style={{
+      padding:'18px 20px', height:140, width:240, boxSizing:'border-box',
+      display:'flex', flexDirection:'column', justifyContent:'space-between',
+    }}>
+      <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
+        <div style={{ fontSize:10, fontFamily:F.mono, color:F.slate500, letterSpacing:1.2, textTransform:'uppercase' }}>{badge}</div>
+        <div style={{ width:8, height:8, background:accent, borderRadius:2 }} />
+      </div>
+      <div>
+        <div style={{ fontSize:17, fontWeight:600, letterSpacing:-0.2, color:F.slate900 }}>{name}</div>
+        <div style={{ fontSize:12, color:F.slate500, marginTop:4, lineHeight:1.45 }}>{sub}</div>
+      </div>
+    </div>
+  );
+}
+
+const products = [
+  { name:'FERSCalc', sub:'Federal retirement planning', badge:'01 · web · live' },
+  { name:'Visual Passage Planner', sub:'Ocean voyage planning', badge:'02 · desktop · v3' },
+  { name:'Manifest', sub:'Local-first project snapshots', badge:'03 · desktop · beta' },
+  { name:'The Grunting Gardener', sub:'Garden planning (planned)', badge:'04 · web · planned' },
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   DIRECTION A — "Endorsed & Quiet"
+   Parent shows up as a small, restrained endorsement ("A [Parent] project")
+   in the footer. Each product gets a distinct accent color. Parent page
+   is a clean index, mostly whitespace, Lora for display, Inter for body.
+   Closest to FERSCalc's current tone — lowest cost of adoption.
+   ═══════════════════════════════════════════════════════════════ */
+function DirectionA() {
+  return (
+    <div style={{ background:'#fff', width:1100, padding:'44px 52px', fontFamily:F.inter, color:F.slate900 }}>
+      {/* tiny wordmark */}
+      <div style={{ display:'flex', alignItems:'baseline', justifyContent:'space-between' }}>
+        <div style={{ display:'flex', alignItems:'center', gap:10 }}>
+          <svg width="22" height="22" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill={F.brand900}/><path d="M7 16 L12 8 L17 16" stroke="#fff" strokeWidth="1.6" fill="none" strokeLinecap="round"/></svg>
+          <div style={{ fontFamily:F.lora, fontSize:22, fontWeight:500, letterSpacing:-0.4 }}>[Parent Name]</div>
+        </div>
+        <div style={{ display:'flex', gap:28, fontSize:13, color:F.slate600 }}>
+          <span>Work</span><span>Notes</span><span>About</span>
+        </div>
+      </div>
+
+      {/* hero */}
+      <div style={{ marginTop:56, maxWidth:720 }}>
+        <div style={{ fontFamily:F.mono, fontSize:11, color:F.slate500, letterSpacing:2, textTransform:'uppercase', marginBottom:14 }}>Independent software, one tool at a time</div>
+        <div style={{ fontFamily:F.lora, fontSize:56, lineHeight:1.08, letterSpacing:-1.2, fontWeight:500 }}>
+          Tools that reduce ambiguity, <em style={{ fontStyle:'italic', color:F.brand800, fontWeight:500 }}>not create false certainty.</em>
+        </div>
+        <div style={{ marginTop:22, fontSize:16, lineHeight:1.6, color:F.slate600, maxWidth:580 }}>
+          A small family of local-first planning tools, built carefully by one person — for federal employees, sailors, developers, and gardeners.
+        </div>
+      </div>
+
+      {/* product grid — restrained index */}
+      <div style={{ marginTop:56, display:'grid', gridTemplateColumns:'repeat(2, 1fr)', gap:0, border:`1px solid ${F.slate200}`, borderRadius:12, overflow:'hidden' }}>
+        {products.map((p,i) => (
+          <div key={i} style={{
+            borderRight: i%2===0 ? `1px solid ${F.slate200}` : 'none',
+            borderBottom: i<2 ? `1px solid ${F.slate200}` : 'none',
+            background:'#fff',
+          }}>
+            <Product {...p} accent={[F.brand600, F.brand900, F.slate700, F.emerald600][i]}/>
+          </div>
+        ))}
+      </div>
+
+      {/* palette strip */}
+      <div style={{ marginTop:36, display:'grid', gridTemplateColumns:'repeat(11, 1fr)', gap:0, borderRadius:6, overflow:'hidden' }}>
+        {[F.slate50, F.slate100, F.slate200, F.slate400, F.slate600, F.slate800, F.slate950, F.brand500, F.brand700, F.brand900, F.emerald600].map((c,i)=>(
+          <div key={i} style={{ height:40, background:c }}/>
+        ))}
+      </div>
+      <div style={{ marginTop:6, display:'flex', justifyContent:'space-between', fontFamily:F.mono, fontSize:10, color:F.slate500, letterSpacing:1 }}>
+        <span>slate · 50 → 950</span><span>brand blue · emerald trust</span>
+      </div>
+
+      <div style={{ marginTop:40, borderTop:`1px solid ${F.slate200}`, paddingTop:16, display:'flex', justifyContent:'space-between' }}>
+        <div style={{ fontFamily:F.lora, fontStyle:'italic', fontSize:14, color:F.slate500 }}>a [Parent] project</div>
+        <div style={{ fontFamily:F.mono, fontSize:10, color:F.slate400, letterSpacing:1.5 }}>A · Endorsed & Quiet · Lora display · Inter body</div>
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DIRECTION B — "Documented & Utility-first"
+   The parent is framed like a dev-tools company. Visible grid,
+   JetBrains Mono forward, code-specimen hero, changelog-style product
+   list, terminal-ish annotations. Technical trust accent.
+   Most aligned with the "Stripe/Cloudflare/Railway" choice.
+   ═══════════════════════════════════════════════════════════════ */
+function DirectionB() {
+  return (
+    <div style={{ background:F.slate50, width:1100, fontFamily:F.inter, color:F.slate900,
+      backgroundImage:`linear-gradient(${F.slate200} 1px, transparent 1px), linear-gradient(90deg, ${F.slate200} 1px, transparent 1px)`,
+      backgroundSize:'32px 32px',
+    }}>
+      <div style={{ padding:'44px 52px' }}>
+        {/* top chrome */}
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', paddingBottom:18, borderBottom:`1px solid ${F.slate200}` }}>
+          <div style={{ display:'flex', alignItems:'center', gap:12 }}>
+            <div style={{ width:18, height:18, borderRadius:3, background:F.slate900, display:'flex', alignItems:'center', justifyContent:'center' }}>
+              <div style={{ width:8, height:8, background:F.emerald400, borderRadius:1 }}/>
+            </div>
+            <div style={{ fontWeight:700, fontSize:16, letterSpacing:-0.2 }}>[Parent Name]</div>
+            <div style={{ fontFamily:F.mono, fontSize:11, color:F.slate500, padding:'2px 8px', background:'#fff', border:`1px solid ${F.slate200}`, borderRadius:4 }}>v2026.4</div>
+          </div>
+          <div style={{ display:'flex', gap:24, fontSize:13, color:F.slate600, alignItems:'center' }}>
+            <span>Products</span><span>Changelog</span><span>Docs</span>
+            <span style={{ fontFamily:F.mono, fontSize:12, color:F.slate500 }}>github ↗</span>
+          </div>
+        </div>
+
+        {/* hero split */}
+        <div style={{ display:'grid', gridTemplateColumns:'1.2fr 1fr', gap:40, marginTop:44, alignItems:'start' }}>
+          <div>
+            <div style={{ fontFamily:F.mono, fontSize:11, color:F.brand700, letterSpacing:1.5, textTransform:'uppercase', marginBottom:16, display:'flex', alignItems:'center', gap:8 }}>
+              <span style={{ width:8, height:8, borderRadius:8, background:F.emerald500 }}/>
+              four tools · one workshop · 2026
+            </div>
+            <div style={{ fontSize:50, lineHeight:1.05, fontWeight:600, letterSpacing:-1.3, color:F.slate950 }}>
+              Local-first tools.<br/>
+              <span style={{ color:F.slate500, fontWeight:500 }}>Specific answers.</span><br/>
+              <span style={{ color:F.brand700 }}>No telemetry.</span>
+            </div>
+            <div style={{ marginTop:22, fontSize:15, lineHeight:1.6, color:F.slate600, maxWidth:520 }}>
+              Planning software built by the person who uses it. Each product is independent and lives in its own folder — your data does too.
+            </div>
+            <div style={{ marginTop:24, display:'flex', gap:10 }}>
+              <div style={{ padding:'11px 18px', background:F.slate950, color:'#fff', fontSize:13, fontWeight:500, borderRadius:8 }}>Browse products →</div>
+              <div style={{ padding:'11px 18px', border:`1px solid ${F.slate300}`, background:'#fff', fontSize:13, fontFamily:F.mono, color:F.slate700, borderRadius:8 }}>/changelog</div>
+            </div>
+          </div>
+
+          {/* terminal specimen */}
+          <div style={{ background:F.slate950, borderRadius:10, padding:18, fontFamily:F.mono, fontSize:12, color:F.slate300, boxShadow:'0 20px 40px -20px rgba(15,23,42,0.4)' }}>
+            <div style={{ display:'flex', gap:6, marginBottom:14, alignItems:'center' }}>
+              <div style={{ width:10, height:10, borderRadius:10, background:'#ff5f57' }}/>
+              <div style={{ width:10, height:10, borderRadius:10, background:'#febc2e' }}/>
+              <div style={{ width:10, height:10, borderRadius:10, background:'#28c840' }}/>
+              <div style={{ marginLeft:10, color:F.slate500, fontSize:11 }}>~/workshop ⌁ ferscalc compare</div>
+            </div>
+            <div><span style={{ color:F.slate500 }}>$</span> <span style={{ color:'#fff' }}>ferscalc</span> compare --from 2027-06 --to 2029-12</div>
+            <div style={{ marginTop:12, color:F.slate400 }}>  net household monthly, year 1:</div>
+            <div style={{ marginTop:6 }}>  <span style={{ color:F.slate500 }}>2027-06</span>  <span style={{ color:F.emerald400 }}>$5,460</span></div>
+            <div>  <span style={{ color:F.slate500 }}>2029-12</span>  <span style={{ color:F.emerald400 }}>$6,700</span>  <span style={{ color:F.slate500 }}>(Δ +22.7%)</span></div>
+            <div style={{ marginTop:12, color:F.slate500 }}>  TSP 30-yr depletion p(&lt;0):</div>
+            <div>  <span style={{ color:F.slate500 }}>2027-06</span>  <span style={{ color:F.amber500 }}>14%</span></div>
+            <div>  <span style={{ color:F.slate500 }}>2029-12</span>  <span style={{ color:F.emerald400 }}>3%</span></div>
+            <div style={{ marginTop:10, color:F.brand500 }}>  → waiting 30 months improves resilience 11pts</div>
+          </div>
+        </div>
+
+        {/* product table — changelog style */}
+        <div style={{ marginTop:48, background:'#fff', border:`1px solid ${F.slate200}`, borderRadius:10, overflow:'hidden' }}>
+          <div style={{ padding:'14px 20px', background:F.slate50, borderBottom:`1px solid ${F.slate200}`, display:'grid', gridTemplateColumns:'80px 1fr 140px 120px 80px', gap:16, fontFamily:F.mono, fontSize:10, color:F.slate500, letterSpacing:1.5, textTransform:'uppercase' }}>
+            <div>Slug</div><div>Product</div><div>Domain</div><div>Status</div><div>Accent</div>
+          </div>
+          {[
+            { slug:'fc', name:'FERSCalc', sub:'Federal retirement planning', domain:'ferscalc.com', status:'beta', statusColor:F.emerald600, accent:F.brand600 },
+            { slug:'vp', name:'Visual Passage Planner', sub:'Ocean voyage planning', domain:'digwave.com', status:'v3 · alpha', statusColor:F.amber500, accent:F.brand900 },
+            { slug:'mf', name:'Manifest', sub:'Local-first project snapshots', domain:'github.com', status:'beta · OSS', statusColor:F.slate600, accent:F.slate700 },
+            { slug:'gg', name:'The Grunting Gardener', sub:'Garden planning', domain:'thegruntinggardener.com', status:'planned', statusColor:F.slate400, accent:F.emerald600 },
+          ].map((p,i) => (
+            <div key={i} style={{ padding:'16px 20px', borderBottom: i<3?`1px solid ${F.slate100}`:'none', display:'grid', gridTemplateColumns:'80px 1fr 140px 120px 80px', gap:16, alignItems:'center' }}>
+              <div style={{ fontFamily:F.mono, fontSize:11, color:F.slate500 }}>{p.slug}</div>
+              <div>
+                <div style={{ fontWeight:600, fontSize:14, color:F.slate900 }}>{p.name}</div>
+                <div style={{ fontSize:12, color:F.slate500, marginTop:2 }}>{p.sub}</div>
+              </div>
+              <div style={{ fontFamily:F.mono, fontSize:12, color:F.slate600 }}>{p.domain}</div>
+              <div style={{ fontFamily:F.mono, fontSize:11, color:p.statusColor }}>● {p.status}</div>
+              <div style={{ width:14, height:14, borderRadius:3, background:p.accent, justifySelf:'start' }}/>
+            </div>
+          ))}
+        </div>
+
+        {/* palette */}
+        <div style={{ marginTop:36, display:'grid', gridTemplateColumns:'repeat(11, 1fr)', gap:2 }}>
+          {[F.slate50, F.slate100, F.slate200, F.slate400, F.slate600, F.slate800, F.slate950, F.brand500, F.brand700, F.brand900, F.emerald500].map((c,i)=>(
+            <div key={i}>
+              <div style={{ height:40, background:c, borderRadius:2 }}/>
+              <div style={{ fontFamily:F.mono, fontSize:9, color:F.slate500, marginTop:3, letterSpacing:0.5 }}>{c}</div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ marginTop:36, paddingTop:14, borderTop:`1px solid ${F.slate200}`, display:'flex', justifyContent:'space-between' }}>
+          <div style={{ fontFamily:F.mono, fontSize:11, color:F.slate500 }}>made by one person · no tracking · no accounts</div>
+          <div style={{ fontFamily:F.mono, fontSize:10, color:F.slate400, letterSpacing:1.5 }}>B · Documented & Utility-first</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DIRECTION C — "Index & Dossier"
+   Editorial index-card treatment. Each product gets a numbered dossier
+   card: code, full name, pull-quote, facts. Parent is barely visible;
+   its role is to be the editorial frame. Lora display, heavy mono
+   metadata labels, slate ink on near-paper bg. Most "crafted" of the three.
+   ═══════════════════════════════════════════════════════════════ */
+function DirectionC() {
+  return (
+    <div style={{ background:'#fafaf7', width:1100, fontFamily:F.inter, color:F.slate900 }}>
+      <div style={{ padding:'40px 52px 32px', borderBottom:`2px solid ${F.slate900}` }}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline' }}>
+          <div style={{ fontFamily:F.plex, fontSize:10, color:F.slate600, letterSpacing:2, textTransform:'uppercase' }}>the workshop index · 2026 / vol 04</div>
+          <div style={{ fontFamily:F.plex, fontSize:10, color:F.slate600, letterSpacing:2, textTransform:'uppercase' }}>№ 0001</div>
+        </div>
+        <div style={{ display:'flex', alignItems:'baseline', justifyContent:'space-between', marginTop:14 }}>
+          <div style={{ fontFamily:F.lora, fontSize:52, fontWeight:600, letterSpacing:-1.5, lineHeight:1 }}>[Parent Name]</div>
+          <div style={{ fontFamily:F.lora, fontStyle:'italic', fontSize:16, color:F.slate600 }}>— a one-person software workshop</div>
+        </div>
+        <div style={{ marginTop:18, fontSize:14, lineHeight:1.65, color:F.slate700, maxWidth:760 }}>
+          An index of four independent tools, each built for a particular kind of person doing a particular kind of thing. Local-first, privacy-respecting, slow to change, and documented in the open. What follows is a summary of each.
+        </div>
+      </div>
+
+      {/* Dossier cards grid */}
+      <div style={{ padding:'32px 52px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:0, borderBottom:`1px solid ${F.slate200}` }}>
+        {[
+          { num:'01', code:'fc', name:'FERSCalc', tag:'Federal retirement planning', quote:'A clearer picture of what retirement could look like, before the decision is final.', meta:[['audience','Federal employees'],['status','Public · usable beta'],['launch','2024'],['stack','SvelteKit · Tailwind v4']] },
+          { num:'02', code:'vp', name:'Visual Passage Planner', tag:'Ocean voyage planning', quote:'Plot the route, read the pilot charts, know what weather you are sailing into.', meta:[['audience','Offshore sailors'],['status','Desktop · v3 alpha'],['launch','1995 (v1)'],['stack','Go · Wails · Svelte']] },
+          { num:'03', code:'mf', name:'Manifest', tag:'Local-first project snapshots', quote:'Your project structure in a readable file. Named snapshots. Diffs that explain changes.', meta:[['audience','Developers'],['status','Open source · beta'],['launch','2026'],['stack','Electron · TS · SQLite']] },
+          { num:'04', code:'gg', name:'The Grunting Gardener', tag:'Garden planning', quote:'A patient garden planner — quiet, honest, not trying to be a social network.', meta:[['audience','Home gardeners'],['status','Planned'],['launch','—'],['stack','—']] },
+        ].map((d, i) => (
+          <div key={i} style={{
+            padding:'28px 32px',
+            borderRight: i%2===0 ? `1px solid ${F.slate200}`:'none',
+            borderBottom: i<2 ? `1px solid ${F.slate200}`:'none',
+          }}>
+            <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline' }}>
+              <div style={{ fontFamily:F.lora, fontSize:40, fontWeight:600, color:F.slate300, letterSpacing:-2, lineHeight:1 }}>{d.num}</div>
+              <div style={{ fontFamily:F.plex, fontSize:10, color:F.slate500, letterSpacing:1.5, textTransform:'uppercase' }}>{d.code}</div>
+            </div>
+            <div style={{ marginTop:10, fontFamily:F.lora, fontSize:26, fontWeight:600, letterSpacing:-0.4, color:F.slate900 }}>{d.name}</div>
+            <div style={{ fontSize:12, color:F.slate500, marginTop:2 }}>{d.tag}</div>
+            <div style={{ marginTop:14, fontFamily:F.lora, fontStyle:'italic', fontSize:14, lineHeight:1.5, color:F.brand900, borderLeft:`2px solid ${F.brand900}`, paddingLeft:12 }}>
+              “{d.quote}”
+            </div>
+            <div style={{ marginTop:16, display:'grid', gridTemplateColumns:'auto 1fr', columnGap:14, rowGap:5 }}>
+              {d.meta.map(([k,v],j)=>(
+                <React.Fragment key={j}>
+                  <div style={{ fontFamily:F.plex, fontSize:10, color:F.slate500, letterSpacing:1.2, textTransform:'uppercase' }}>{k}</div>
+                  <div style={{ fontSize:12, color:F.slate700 }}>{v}</div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* spec strip */}
+      <div style={{ padding:'24px 52px', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+        <div style={{ display:'flex', gap:2 }}>
+          {[F.slate100, F.slate300, F.slate500, F.slate700, F.slate900, F.brand700, F.brand900, F.emerald600].map((c,i)=>(
+            <div key={i} style={{ width:36, height:36, background:c }}/>
+          ))}
+        </div>
+        <div style={{ fontFamily:F.plex, fontSize:10, color:F.slate500, letterSpacing:1.5 }}>C · Index & Dossier · Lora headlines · IBM Plex Mono metadata</div>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Rationale + instruction card ─── */
+function Intro() {
+  return (
+    <div style={{ padding:'40px 60px 20px', maxWidth:1100, fontFamily:F.inter }}>
+      <div style={{ fontFamily:F.mono, fontSize:11, color:'#7a7067', letterSpacing:2, textTransform:'uppercase' }}>Step 1 · Pick a direction</div>
+      <div style={{ fontSize:36, fontWeight:600, letterSpacing:-1, marginTop:6, color:'#1a1815' }}>
+        Three parent-brand voices, one shared DNA.
+      </div>
+      <div style={{ fontSize:15, color:'#55504a', maxWidth:740, lineHeight:1.55, marginTop:10 }}>
+        All three are built on FERSCalc's existing token set — Inter + Lora, slate neutrals, brand-blue scale, emerald trust accent, .dark class for dark mode. What varies is the <em>parent-brand voice</em>: how the family wraps around each product. Pick one — or mix ("A's quiet with B's terminal"). Name is still a placeholder until you send it.
+      </div>
+      <div style={{ marginTop:18, display:'flex', gap:10, fontFamily:F.mono, fontSize:11, color:'#55504a' }}>
+        <span style={{ padding:'4px 10px', background:'#fff', border:'1px solid #e3dfd6', borderRadius:4 }}>A · Endorsed &amp; Quiet</span>
+        <span style={{ padding:'4px 10px', background:'#fff', border:'1px solid #e3dfd6', borderRadius:4 }}>B · Documented &amp; Utility-first</span>
+        <span style={{ padding:'4px 10px', background:'#fff', border:'1px solid #e3dfd6', borderRadius:4 }}>C · Index &amp; Dossier</span>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Root ─── */
+function Root() {
+  return (
+    <DesignCanvas>
+      <Intro/>
+
+      <DCSection title="Three directions" subtitle="Same underlying tokens. Different parent-brand posture.">
+        <DCArtboard label="A · Endorsed & Quiet — lowest friction; parent is a small endorsement" width={1100} height={640}>
+          <DirectionA/>
+        </DCArtboard>
+        <DCArtboard label="B · Documented & Utility-first — dev-tools confidence; grid + terminal" width={1100} height={880}>
+          <DirectionB/>
+        </DCArtboard>
+        <DCArtboard label="C · Index & Dossier — editorial; numbered product dossiers" width={1100} height={720}>
+          <DirectionC/>
+        </DCArtboard>
+      </DCSection>
+
+      <DCPostIt top={90} right={80} width={240} rotate={3}>
+        Reply with: direction letter + the parent brand name you had in mind. I'll build the full system from your pick.
+      </DCPostIt>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Root/>);
+</script>
+</body>
+</html>
