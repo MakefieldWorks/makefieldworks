@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────────────────────────
    Makefield Works — Design Tokens
-   Source of truth for all four products and the parent site.
+   Source of truth for all five products and the parent site.
    Mirrors FERSCalc's existing palette so adoption is near-zero-cost.
    ─────────────────────────────────────────────────────────────
 
@@ -82,6 +82,7 @@
   --mw-product-ferscalc: #32747C; /* FERSCalc's teal wave mark */
   --mw-product-vpp:      #7FCCC6; /* DIGWAVE aqua spiral */
   --mw-product-manifest: #D7B642; /* Manifest's warm gold accent */
+  --mw-product-nauticalc: #E0B568; /* NautiCalc's brass compass mark */
   --mw-product-gardener: var(--mw-emerald-700); /* placeholder — no mark yet */
 
   /* ── Type ────────────────────────────────────────────────────── */
