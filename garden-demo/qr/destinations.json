@@ -1,0 +1,29 @@
+[
+  {
+    "plant": "Beet",
+    "slug": "beet",
+    "category": "Food",
+    "url": "https://makefieldworks.com/garden-demo/#plant/beet",
+    "modules": 33,
+    "quiet_zone_modules": 4,
+    "decoded": true
+  },
+  {
+    "plant": "Horehound",
+    "slug": "horehound",
+    "category": "Historical medicine",
+    "url": "https://makefieldworks.com/garden-demo/#plant/horehound",
+    "modules": 33,
+    "quiet_zone_modules": 4,
+    "decoded": true
+  },
+  {
+    "plant": "Goldenrod",
+    "slug": "goldenrod",
+    "category": "Dye",
+    "url": "https://makefieldworks.com/garden-demo/#plant/goldenrod",
+    "modules": 33,
+    "quiet_zone_modules": 4,
+    "decoded": true
+  }
+]
