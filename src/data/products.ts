@@ -1,15 +1,15 @@
 export const products = [
   {
+    name: 'Visual Passage Planner',
+    job: 'Visual Passage Planner includes the complete NOAA Pilot Chart dataset and uses it in every passage simulation. Compare departure months for the same crossing to see how prevailing winds, currents, and wave heights vary along your route.',
+    url: 'https://www.digwave.com/',
+    accent: 'var(--mw-product-vpp)',
+  },
+  {
     name: 'FERSCalc',
     job: 'Compare two federal retirement dates and see how another year on the job changes the picture. Explore how your pension, TSP withdrawals, and Social Security fit together.',
     url: 'https://ferscalc.com/',
     accent: 'var(--mw-product-ferscalc)',
-  },
-  {
-    name: 'Visual Passage Planner',
-    job: 'Lay out an ocean passage and explore the winds, currents, and waves typical for each month. Compare departure months along the same route.',
-    url: 'https://www.digwave.com/',
-    accent: 'var(--mw-product-vpp)',
   },
   {
     name: 'NautiCalc',

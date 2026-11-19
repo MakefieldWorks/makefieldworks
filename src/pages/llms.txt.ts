@@ -5,7 +5,7 @@ export function GET() {
   const text = [
     '# Makefield Works',
     '',
-    '> A one-person software workshop in Upper Makefield Township, Pennsylvania, United States.',
+    '> A small, independent software workshop in Upper Makefield Township, Pennsylvania, United States.',
     '',
     '## Workshop',
     '',
