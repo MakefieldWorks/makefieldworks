@@ -12,6 +12,31 @@ const {
   description = 'Makefield Works is a one-person software workshop in Upper Makefield Township, Pennsylvania, United States. Explore tools for retirement, sailing, projects, and gardens.',
   notFound = false,
 } = Astro.props;
+
+const siteUrl = 'https://makefieldworks.com/';
+const logoUrl = siteUrl + 'assets/workshop-mark.png';
+const organizationId = siteUrl + '#organization';
+const organizationProfile = 'https://github.com/MakefieldWorks';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': organizationId,
+      name: 'Makefield Works',
+      url: siteUrl,
+      logo: logoUrl,
+      sameAs: [organizationProfile],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': siteUrl + '#website',
+      name: 'Makefield Works',
+      url: siteUrl,
+      publisher: { '@id': organizationId },
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -24,15 +49,16 @@ const {
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {notFound ? <meta name="robots" content="noindex" /> : (
       <>
-        <link rel="canonical" href="https://makefieldworks.com/" />
+        <link rel="canonical" href={siteUrl} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://makefieldworks.com/" />
+        <meta property="og:url" content={siteUrl} />
         <meta property="og:site_name" content="Makefield Works" />
-        <meta property="og:image" content="https://makefieldworks.com/assets/workshop-mark.png" />
+        <meta property="og:image" content={logoUrl} />
         <meta property="og:image:alt" content="Makefield Works camelback bridge mark" />
         <meta name="twitter:card" content="summary" />
+        <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
       </>
     )}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -92,7 +118,7 @@ const {
     <footer>
       <div class="shell bar">
         <p id="story">Founded in 1993 as <a href="https://www.digwave.com/">Digital Wave</a>, the original home of Visual Passage Planner.</p>
-        <a href="https://github.com/MakefieldWorks">GitHub</a>
+        <a href={organizationProfile}>GitHub</a>
       </div>
     </footer>
   </body>
