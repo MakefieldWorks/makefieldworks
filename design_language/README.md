@@ -26,7 +26,7 @@ The parent marketing site (**makefieldworks.com**) is the index — a quiet, edi
 
 ## Why "Makefield Works"
 
-- **Placeless but grounded.** "Makefield" is a real place (Lower Makefield, PA), but to most readers it reads as a workshop name. It stretches to sailing, retirement, gardening, dev tools without pulling toward any of them.
+- **Placeless but grounded.** "Makefield" is the workshop’s home in Upper Makefield Township, PA, but to most readers it reads as a workshop name. It stretches to sailing, retirement, gardening, dev tools without pulling toward any of them.
 - **"Works"** signals a workshop — one person, multiple things, careful output. It also lets each product keep its noun ("FERSCalc", not "Makefield Retire").
 - **No marine / financial / tech lock-in.** Unlike "Digital Wave," the name doesn't pre-commit the family to a category.
 

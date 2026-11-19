@@ -1,0 +1,99 @@
+---
+import '../styles/site.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  notFound?: boolean;
+}
+
+const {
+  title = 'Makefield Works — A one-person software workshop',
+  description = 'Makefield Works is a one-person software workshop in Upper Makefield Township, Pennsylvania, United States. Explore tools for retirement, sailing, projects, and gardens.',
+  notFound = false,
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {notFound ? <meta name="robots" content="noindex" /> : (
+      <>
+        <link rel="canonical" href="https://makefieldworks.com/" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://makefieldworks.com/" />
+        <meta property="og:site_name" content="Makefield Works" />
+        <meta property="og:image" content="https://makefieldworks.com/assets/workshop-mark.png" />
+        <meta property="og:image:alt" content="Makefield Works camelback bridge mark" />
+        <meta name="twitter:card" content="summary" />
+      </>
+    )}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono&family=Lora:wght@400;500&display=swap" />
+    <script is:inline>
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+      let preference;
+      try {
+        preference = localStorage.getItem('workshop-theme');
+      } catch {}
+      function applyTheme(dark) {
+        document.documentElement.classList.toggle('dark', dark);
+        const button = document.querySelector('#theme');
+        button?.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      applyTheme(preference ? preference === 'dark' : systemTheme.matches);
+      systemTheme.addEventListener('change', () => {
+        if (!preference) applyTheme(systemTheme.matches);
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.querySelector('#theme');
+        toggle.hidden = false;
+        applyTheme(document.documentElement.classList.contains('dark'));
+        toggle.addEventListener('click', () => {
+          const dark = !document.documentElement.classList.contains('dark');
+          preference = dark ? 'dark' : 'light';
+          applyTheme(dark);
+          try {
+            localStorage.setItem('workshop-theme', preference);
+          } catch {}
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <div class="shell bar">
+        <a class="brand" href="/">
+          <img class="light-mark" src="/assets/makefield-works-mark.svg" width="54" height="27" alt="" />
+          <img class="dark-mark" src="/assets/makefield-works-mark-reverse.svg" width="54" height="27" alt="" />
+          Makefield Works
+        </a>
+        <button id="theme" type="button" aria-label="Switch to dark mode" hidden>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path class="moon" d="M20.5 14A8.7 8.7 0 0 1 10 3.5 8.7 8.7 0 1 0 20.5 14Z" />
+            <g class="sun">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" />
+            </g>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main class="shell" id="main" tabindex="-1"><slot /></main>
+    <footer>
+      <div class="shell bar">
+        <p id="story">Founded in 1993 as <a href="https://www.digwave.com/">Digital Wave</a>, the original home of Visual Passage Planner.</p>
+        <a href="https://github.com/MakefieldWorks">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>
